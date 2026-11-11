@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="ur">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="dark"/>
+<link rel="icon" href="data:,">
+<title>GameBazaar — 50 Free Online Games | Bina Download Khelo</title>
+<meta name="description" content="GameBazaar par 50 free online games khelo — Snake, 2048, Tetris, Cricket, Ludo, Car Race, Jutt Express Bus Driver aur bohat si aur. Koi download nahi, mobile aur laptop dono par foran chalti hain. Sath me har mashhoor game ki guide aur tips bhi parho.">
+<meta name="keywords" content="free online games, online games khelo, snake game, 2048, tetris, cricket game, ludo, car race, bus driver game, puzzle games, GameBazaar">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GameBazaar — 50 Free Online Games">
+<meta property="og:description" content="50 mazaydaar games ek hi jagah — bina download, bilkul free. Snake, Cricket, 2048, Tetris, Bus Driver aur bohat kuch!">
+<meta property="og:locale" content="ur_PK">
+<!-- Google AdSense: apna publisher code (ca-pub-XXXX) yahan head me lagega jab account approve ho jaye. Code lagane se pehle ye comment hata dein. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0B0B12;--panel:#151522;--panel2:#1C1C2E;--lime:#C6FF3A;--pink:#FF3E8A;--cyan:#2EE6FF;--yellow:#FFD93D;--orange:#FF7A29;--text:#fff;--muted:#B9B9D1;--line:#2A2A44}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Nunito",system-ui,sans-serif;overflow-x:hidden}
+button,input{font-family:inherit}
+button,[role="button"]{min-height:44px}
+/* top strip */
+.strip{background:var(--lime);color:#111;text-align:center;font-weight:900;font-size:13px;letter-spacing:.04em;padding:8px 12px}
+/* hero */
+.hero{position:relative;padding:28px 18px 10px;max-width:1180px;margin:0 auto;text-align:center}
+.hero::before{content:"";position:absolute;inset:-40px 0 auto 0;height:340px;background:radial-gradient(600px 220px at 20% 0%,rgba(255,62,138,.28),transparent 60%),radial-gradient(600px 220px at 80% 0%,rgba(46,230,255,.22),transparent 60%);pointer-events:none}
+.logo{font-family:"Fredoka",sans-serif;font-weight:700;font-size:clamp(44px,9vw,92px);line-height:.95;letter-spacing:-.02em;position:relative}
+.logo .g{color:var(--lime)} .logo .d{color:#fff} .logo .dot{color:var(--pink)}
+.tagline{font-size:clamp(16px,2.6vw,22px);font-weight:800;color:#EDEDF7;max-width:720px;margin:12px auto 4px;line-height:1.35}
+.tagline b{color:var(--yellow)}
+.sub{color:var(--muted);font-weight:700;font-size:15px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 6px;position:relative}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:900;font-size:14px}
+.stat span{color:var(--lime)}
+/* search + filters */
+.controls{max-width:1180px;margin:14px auto 0;padding:0 16px;position:sticky;top:0;z-index:20;background:rgba(11,11,18,.92);backdrop-filter:blur(10px);padding-top:12px;padding-bottom:12px}
+.search{width:100%;background:#fff;color:#111;border:none;border-radius:16px;padding:15px 18px;font-size:17px;font-weight:800;outline:3px solid transparent}
+.search:focus{outline-color:var(--cyan)}
+.search::placeholder{color:#777}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;justify-content:center}
+.cat{border:2px solid var(--line);background:var(--panel);color:#fff;border-radius:999px;padding:9px 16px;font-weight:900;font-size:14px;cursor:pointer}
+.cat.active{background:var(--lime);color:#111;border-color:var(--lime)}
+.countline{text-align:center;color:var(--muted);font-weight:800;font-size:13px;margin-top:10px}
+/* featured */
+.wrap{max-width:1180px;margin:0 auto;padding:10px 16px 30px}
+.featured{margin-top:14px;background:linear-gradient(120deg,#FF7A29,#FF3E8A);border-radius:24px;padding:22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.featured .big{font-size:64px;line-height:1}
+.featured h2{font-family:"Fredoka",sans-serif;margin:0;font-size:clamp(26px,4vw,38px);line-height:1.05}
+.featured p{margin:6px 0 0;font-weight:700;opacity:.95;max-width:560px}
+.btn{border:none;cursor:pointer;border-radius:999px;font-weight:900}
+.btn-play{background:#111;color:#fff;padding:13px 26px;font-size:16px}
+.btn-play:active{transform:scale(.97)}
+.btn-lime{background:var(--lime);color:#111;padding:12px 22px;font-size:15px}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr);gap:14px}}
+@media(min-width:980px){.grid{grid-template-columns:repeat(5,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:16px 14px 14px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c,#C6FF3A)}
+.card .icon{font-size:44px;line-height:1;margin-top:4px}
+.card h3{margin:2px 0 0;font-family:"Fredoka",sans-serif;font-size:19px;line-height:1.15}
+.card .urdu{color:var(--yellow);font-weight:900;font-size:13px}
+.card p{margin:0;color:var(--muted);font-size:13.5px;font-weight:700;line-height:1.45;flex:1}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.tag{font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;background:var(--panel2);border:1px solid var(--line);padding:5px 9px;border-radius:999px;color:#D9D9EC}
+.play{border:none;background:var(--c,#C6FF3A);color:#111;font-weight:900;border-radius:999px;padding:10px 18px;font-size:14px;cursor:pointer}
+.play:active{transform:scale(.96)}
+.empty{display:none;text-align:center;padding:40px 10px;color:var(--muted);font-weight:800;font-size:17px}
+.how{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:22px}
+.how h2{font-family:"Fredoka",sans-serif;margin:0 0 8px;font-size:24px}
+.how ol{margin:0;padding-left:20px;color:#E6E6F2;font-weight:700;line-height:1.7}
+/* content pages (About / Guides / FAQ / Privacy / Contact) */
+.pagenav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px auto 0;max-width:1180px;padding:0 16px}
+.pagenav a{background:var(--panel);border:1px solid var(--line);color:#fff;text-decoration:none;font-weight:900;font-size:14px;padding:10px 16px;border-radius:999px}
+.pagenav a:active{transform:scale(.97)}
+.content{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px 20px;margin-top:22px}
+.content h2{font-family:"Fredoka",sans-serif;margin:0 0 10px;font-size:26px;line-height:1.2}
+.content h3{font-family:"Fredoka",sans-serif;margin:18px 0 6px;font-size:20px;color:var(--yellow)}
+.content p,.content li{color:#E6E6F2;font-weight:600;font-size:15.5px;line-height:1.75}
+.content p{margin:0 0 10px}
+.content ul{margin:0 0 10px;padding-left:20px}
+.content a{color:var(--cyan);font-weight:800}
+.faqitem{border-top:1px solid var(--line);padding:12px 0}
+.faqitem:first-of-type{border-top:none}
+.faqitem b{color:#fff;font-size:16px}
+.faqitem p{margin:4px 0 0}
+.adslot{border:2px dashed var(--line);border-radius:16px;margin-top:22px;padding:14px;text-align:center;color:var(--muted);font-weight:800;font-size:12px;letter-spacing:.12em}
+footer a{color:var(--cyan);font-weight:800;text-decoration:none;margin:0 6px}
+footer{text-align:center;color:var(--muted);font-weight:700;font-size:13px;padding:10px 16px 40px;line-height:1.7}
+footer b{color:#fff}
+/* modal player */
+.overlay{position:fixed;inset:0;background:rgba(5,5,10,.96);z-index:50;display:none;flex-direction:column}
+.overlay.open{display:flex}
+.p-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.p-head h2{font-family:"Fredoka",sans-serif;margin:0;font-size:20px;flex:1;line-height:1.2}
+.p-head .score{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:900;font-size:14px;white-space:nowrap}
+.iconbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:20px;cursor:pointer;flex:none}
+.p-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:14px;overflow:auto;width:100%}
+.p-desc{color:var(--muted);font-weight:700;text-align:center;max-width:520px;margin:0 0 12px;font-size:14.5px;line-height:1.5}
+.stage{width:100%;max-width:440px;background:#10101C;border:1px solid var(--line);border-radius:18px;padding:12px}
+canvas.game{width:100%;height:auto;display:block;background:#0A0A14;border-radius:12px;touch-action:none}
+.msg{text-align:center;font-weight:900;font-size:17px;min-height:26px;margin:10px 0 4px}
+.p-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.p-controls button{background:var(--panel2);color:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-weight:900;font-size:15px;cursor:pointer;min-width:56px}
+.p-controls button.primary{background:var(--lime);color:#111;border-color:var(--lime)}
+.dpad{display:grid;grid-template-columns:56px 56px 56px;gap:6px;justify-content:center;margin-top:10px}
+.dpad button{height:52px;font-size:20px}
+/* DOM games */
+.memgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.memcard{aspect-ratio:1;border-radius:12px;border:none;font-size:30px;cursor:pointer;background:var(--panel2);color:#fff}
+.memcard.open{background:#fff}
+.grid2048{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cell2048{aspect-ratio:1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:"Fredoka",sans-serif;font-size:22px;background:var(--panel2)}
+.ttt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:320px;margin:0 auto}
+.ttt button{aspect-ratio:1;font-size:36px;font-family:"Fredoka",sans-serif;border-radius:14px;border:1px solid var(--line);background:var(--panel2);color:#fff;cursor:pointer}
+.c4{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.c4 button{aspect-ratio:1;border-radius:50%;border:none;background:var(--panel2);cursor:pointer;font-size:18px}
+.minegrid{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
+.minegrid button{aspect-ratio:1;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:#fff;font-weight:900;font-size:15px;cursor:pointer;padding:0}
+.simon{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:300px;margin:0 auto}
+.simon button{aspect-ratio:1.3;border:none;border-radius:16px;cursor:pointer;opacity:.55}
+.simon button.lit{opacity:1;filter:brightness(1.6)}
+.qbtn{display:block;width:100%;text-align:left;background:var(--panel2);color:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;font-weight:800;font-size:16px;margin-top:8px;cursor:pointer}
+input.txtin{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#111;font-size:17px;font-weight:800}
+.bigword{font-family:"Fredoka",sans-serif;font-size:34px;letter-spacing:.14em;text-align:center;margin:8px 0}
+.keys{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+.keys button{width:42px;height:46px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:#fff;font-weight:900;cursor:pointer}
+.keys button:disabled{opacity:.3}
+.sudoku{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:300px;margin:0 auto}
+.sudoku input{width:100%;aspect-ratio:1;text-align:center;font-size:22px;font-weight:900;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:#fff;padding:0}
+.sudoku input.given{background:#fff;color:#111}
+.piano{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.piano div{height:110px;border-radius:12px;background:var(--panel2);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:22px}
+.piano div.hot{background:var(--pink)}
+@media(max-width:520px){.featured{padding:18px}.card h3{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="strip">🎮 50 GAMES • BILKUL FREE • KOI DOWNLOAD NAHI • MOBILE PAR BHI CHALEGA</div>
+
+<header class="hero">
+  <div class="logo"><span class="g">GAME</span><span class="d">BAZAAR</span><span class="dot">.</span></div>
+  <p class="tagline">Duniya bhar ke <b>50 mazaydaar games</b> — ek hi jagah, bilkul free!<br>Bas game chuno, <b>Play</b> dabao aur khelna shuru!</p>
+  <p class="sub">Na download, na install, na paisay — sirf maza! 😄</p>
+  <div class="stats">
+    <div class="stat">🕹️ <span>50</span> Games</div>
+    <div class="stat">📱 Mobile + Laptop</div>
+    <div class="stat">⚡ Foran Shuru</div>
+    <div class="stat">💸 <span>100% Free</span></div>
+  </div>
+</header>
+
+<nav class="pagenav" aria-label="Site ke hisse">
+  <a href="#games">🎮 Games</a>
+  <a href="#about">ℹ️ GameBazaar Kya Hai</a>
+  <a href="#guides">📖 Game Guides</a>
+  <a href="#faq">❓ Aam Sawaal</a>
+  <a href="#privacy">🔒 Privacy Policy</a>
+  <a href="#contact">✉️ Rabta Karo</a>
+</nav>
+
+<div class="controls">
+  <input class="search" id="search" type="search" placeholder="🔍 Game dhoondo… Snake, Cricket, Car, Puzzle…" aria-label="Game search karo">
+  <div class="cats" id="cats"></div>
+  <div class="countline" id="countline"></div>
+</div>
+
+<main class="wrap">
+  <section class="featured">
+    <div class="big">🚌</div>
+    <div style="flex:1;min-width:220px">
+      <h2>Jutt Express Bus Driver</h2>
+      <p>Lahore ki sarkon par bus chalao! Traffic se bacho, zyada se zyada distance cover karo aur high score banao. GameBazaar ki sab se khaas game!</p>
+    </div>
+    <button class="btn btn-play" data-play="bus">▶ ABHI KHELO</button>
+  </section>
+
+  <div id="games"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">😕 Ye game nahi mili. Koi aur naam likh kar dekho!</div>
+
+  <section class="how">
+    <h2>🎯 Khelna Kaise Hai?</h2>
+    <ol>
+      <li>Neeche se apni pasand ki game chuno aur <b>Play</b> dabao.</li>
+      <li>Mobile par screen par diye gaye buttons ya tap se khelo, laptop par mouse aur keyboard ke arrows use karo.</li>
+      <li>Har game me score banta hai — doston ko apna high score dikhao aur challenge do!</li>
+    </ol>
+  </section>
+
+  <div class="adslot" aria-hidden="true">ADVERTISEMENT</div>
+
+  <section class="content" id="about">
+    <h2>ℹ️ GameBazaar Kya Hai?</h2>
+    <p><b>GameBazaar</b> ek free online games ki website hai jahan 50 mukhtalif games ek hi jagah milti hain — bina download, bina install aur bina kisi account ke. Aap bas page kholo, apni pasand ki game chuno, Play dabao, aur game isi screen par shuru ho jati hai. Ye website khaas taur par un logon ke liye banayi gayi hai jo mobile par halki phulki, tez khulne wali games khelna chahte hain, chahe net slow hi kyun na ho.</p>
+    <p>Yahan har umar aur har pasand ke liye kuch na kuch hai. Purani yaadein taza karne ke liye <b>Snake, Tetris, Ludo Dice aur Tic Tac Toe</b> jaisi classic games hain. Dimag tez karne ke liye <b>2048, Sudoku, Memory Match, Math Quiz aur Quiz Duniya</b> hain. Action pasand hai to <b>Space Shooter, Zombie Tap aur Flappy Bird</b> maujood hain, aur sports ke shoqeen ke liye <b>Cricket Timing, Football Penalty aur Basketball Shoot</b> rakhi gayi hain. Hamari sab se khaas game <b>Jutt Express Bus Driver</b> hai, jisme Lahore ki sarkon par bus chala kar traffic se bachna hota hai.</p>
+    <h3>GameBazaar Kyun Khelein?</h3>
+    <ul>
+      <li><b>Bilkul free:</b> Koi game locked nahi, koi paisay nahi — saari 50 games muft hain.</li>
+      <li><b>Koi download nahi:</b> Phone ki storage bharne ki tension khatam, games browser ke andar chalti hain.</li>
+      <li><b>Mobile aur laptop dono par:</b> Touch buttons mobile ke liye aur keyboard controls laptop ke liye diye gaye hain.</li>
+      <li><b>Slow net par bhi tez:</b> Games halki hain, is liye kamzor internet par bhi jaldi khul jati hain.</li>
+      <li><b>Har roz naya challenge:</b> Har game me score system hai — apna purana record toro aur doston ko challenge karo.</li>
+    </ul>
+    <p>GameBazaar ka maqsad sirf ek hai: har kisi ko asaan, mehfooz aur mazaydaar waqt dena. Bachay hon ya baray, har koi apni pasand ki game dhoond sakta hai. Agar koi game pasand aaye to usay doston ke saath share karein, aur agar kisi game me koi kami mehsoos ho to neeche diye gaye rabta (contact) se humein zaroor batayein — aap ki raaye se hi ye website behtar banti hai.</p>
+  </section>
+
+  <section class="content" id="guides">
+    <h2>📖 Game Guides — Zyada Score Kaise Banayein?</h2>
+    <p>Sirf khelna hi mazaa nahi, jeetna us se bara mazaa hai! Neeche hamari mashhoor games ki mukhtasar guides di gayi hain. In tips par amal karein aur apne doston se zyada score bana kar dikhayein.</p>
+
+    <h3>🐍 Snake Classic — Lamba Saanp, Bara Score</h3>
+    <p>Snake duniya ki sab se purani aur pasandeeda games me se hai. Is me aap ka saanp seb kha kar lamba hota jata hai, aur jitna lamba saanp, utna zyada score. Asli mushkil ye hai ke lamba saanp apne hi jism se takra kar khatam ho sakta hai. Jeetne ki trick ye hai: hamesha kinaron (edges) ke qareeb ghumo aur beech me khaali jagah rakho taake phasne ki surat me nikalne ka rasta mile. Jaldi jaldi mod (turn) lene se bacho — ek ghalat mod aur game over. Shuru me araam se khelo, jab saanp lamba ho jaye tab aur zyada dhyaan do, kyunki asal imtehan wahi hota hai.</p>
+
+    <h3>🔢 2048 Puzzle — Dimag Ki Asli Game</h3>
+    <p>2048 me same number wali tiles ko mila mila kar bara number banana hota hai, aur aakhir me 2048 wali tile banana jeet hai. Is game ki sab se mashhoor strategy "corner strategy" hai: apni sab se bari tile ko kisi ek kone (corner) me rakho aur use wahan se hilne na do. Tiles hamesha do hi simton (directions) me sarakao, teesri simt tabhi use karo jab majboori ho. Choti tiles ko bari tile ke aas paas jama hone do — jaise hi do same number milen, wo jud kar bari tile ke qareeb bari tile bana dengi. Jo log bina soche chaaron taraf tiles sarakate hain, un ki board jaldi bhar jati hai aur game khatam ho jati hai. Sabr hi is game ki kunji hai.</p>
+
+    <h3>🏏 Cricket Timing — Chhakka Kaise Marein?</h3>
+    <p>Cricket Timing me sirf 6 balls milti hain, aur har ball par sahi lamhe par SWING dabana hota hai. Boht jaldi swing kiya to ball miss, boht der ki to bowled! Chhakka usi waqt lagta hai jab ball bat ke bilkul qareeb ho — na aage, na peeche. Pehli ek do balls par timing samajhne ki koshish karein, phir baqi balls par puray aitmaad se khelein. Yaad rakhein: ek over me 36 runs tak ban sakte hain, to har ball qeemti hai. Agar bowled ho jayein to ghabrayein nahi — ↻ dabayein aur nayi innings me apna record tor dein.</p>
+
+    <h3>🚌 Jutt Express Bus Driver — Traffic Se Kaise Bachein?</h3>
+    <p>Ye GameBazaar ki khaas game hai. Bus teesri lane se shuru hoti hai aur aap ko LEFT aur RIGHT buttons se lane badal kar aati garion se bachna hota hai. Score distance ke saath barhta hai, lekin saath hi speed bhi barhti jati hai. Trick ye hai ke lane aakhri lamhe par na badlein — aage wali gaari ko dekhte hi pehle se plan bana lein ke left jana hai ya right. Beech wali lane sab se mehfooz rehti hai kyunki wahan se dono taraf nikalne ka mauqa milta hai. Aankhein apni bus par nahi, aage ki traffic par rakhein — yahi asal driver ki pehchan hai!</p>
+
+    <h3>🧱 Block Tetris — Line Kaise Saaf Karein?</h3>
+    <p>Tetris me girte hue blocks ko is tarah lagana hota hai ke ek poori horizontal line ban jaye — line bante hi wo gayab ho jati hai aur score milta hai. Sab se bari ghalti blocks ke beech khaali suraakh (gap) chhorna hai, kyunki suraakh ke neeche wali line kabhi poori nahi hoti. Hamesha satah (surface) hamwaar rakhein, unchi neechi tower na banayein. Lambi wali chaar blocks ki salai (I-piece) ke liye ek kone me jagah khaali rakhein — us se ek saath zyada lines saaf hoti hain aur score tezi se barhta hai.</p>
+  </section>
+
+  <section class="content" id="faq">
+    <h2>❓ Aam Sawaal (FAQ)</h2>
+    <div class="faqitem"><b>Kya GameBazaar ki games waqai free hain?</b>
+      <p>Ji haan, bilkul free. Saari 50 games baghair kisi qeemat, baghair account aur baghair download ke kheli ja sakti hain. Koi game beech me band nahi hoti aur na hi aage khelne ke liye paisay maangti hai.</p></div>
+    <div class="faqitem"><b>Kya ye games mobile par chalengi?</b>
+      <p>Ji, GameBazaar mobile aur laptop dono ke liye banaya gaya hai. Har game me screen par touch buttons diye gaye hain, is liye aap phone par ungli se asaani se khel sakte hain. Laptop par mouse aur keyboard ke arrow keys bhi kaam karte hain.</p></div>
+    <div class="faqitem"><b>Kya games khelne ke liye internet zaroori hai?</b>
+      <p>Page kholne ke liye internet chahiye, lekin games boht halki hain is liye slow net par bhi chal jati hain. Ek baar game shuru ho jaye to wo aap ke browser ke andar hi chalti rehti hai.</p></div>
+    <div class="faqitem"><b>Mera high score save hota hai ya nahi?</b>
+      <p>Har game ke andar score screen par dikhai deta hai taake aap doston ko dikha saken aur un se muqabla kar saken. Page band karne par score reset ho jata hai — is liye apna behtareen score yaad rakhein ya screenshot le lein!</p></div>
+    <div class="faqitem"><b>Kya ye games bachon ke liye mehfooz hain?</b>
+      <p>Ji haan. GameBazaar ki saari games family-friendly hain — in me koi tashadud (violence) wala graphic content, jua (gambling) ya khareedari (in-app purchases) nahi hai. Bachay bhi araam se khel sakte hain, aur Memory Match, Math Quiz aur Quiz Duniya jaisi games to un ke dimag ke liye faidamand bhi hain.</p></div>
+    <div class="faqitem"><b>Koi game chal nahi rahi, main kya karoon?</b>
+      <p>Sab se pehle page ko refresh karke dobara koshish karein. Agar phir bhi masla aaye to koi doosra browser (jaise Chrome) istemal karein aur apne phone ka internet check karein. Phir bhi masla rahe to neeche Contact wale hisse se humein batayein, hum theek karne ki poori koshish karenge.</p></div>
+    <div class="faqitem"><b>Kya main apni pasand ki game add karwa sakta hoon?</b>
+      <p>Zaroor! Agar aap kisi khaas game ki farmaish karna chahte hain to Contact hisse me email karke bata dein. Jo game sab se zyada maangi jayegi, use aane wale update me shamil karne ki koshish ki jayegi.</p></div>
+  </section>
+
+  <section class="content" id="privacy">
+    <h2>🔒 Privacy Policy</h2>
+    <p><i>Akhir tabdeel: November 2026</i></p>
+    <p>GameBazaar aap ki privacy ka poora khayal rakhta hai. Is policy me saaf tor par bataya gaya hai ke hum kaun si maloomat lete hain aur kaun si nahi lete.</p>
+    <h3>Hum Kaun Si Maloomat Lete Hain?</h3>
+    <p>GameBazaar par khelne ke liye <b>koi account, naam, email ya phone number nahi maanga jata</b>. Saari games aap ke apne browser (mobile ya computer) ke andar chalti hain. Aap ka score sirf usi waqt screen par dikhai deta hai jab aap khel rahe hote hain — wo humaray paas kahin save ya bheja nahi jata. Is liye humaray paas aap ki zaati maloomat ka koi record mojood hi nahi hota.</p>
+    <h3>Cookies Aur Advertising</h3>
+    <p>Is website par Google AdSense aur deegar advertising networks ki ads dikhai ja sakti hain. Google aur us ke partners aap ko behtar aur dilchaspi ke mutabiq ads dikhane ke liye cookies istemal kar sakte hain. Ye cookies sirf ads ke maqsad ke liye hoti hain aur in par humara control nahi hota. Agar aap chahein to apni marzi ke ads band karne ke liye <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a> par ja sakte hain, ya <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a> se doosri companies ki cookies se bhi opt-out kar sakte hain. Aap apne browser ki settings se kabhi bhi saari cookies band ya delete kar sakte hain — is se games khelne par koi farq nahi parega.</p>
+    <h3>Bachon Ki Privacy</h3>
+    <p>GameBazaar ki games har umar ke liye hain, lekin hum 13 saal se kam umar bachon se jaan boojh kar koi zaati maloomat ikatthi nahi karte — asal me hum kisi se bhi zaati maloomat ikatthi nahi karte, kyunki website par koi form ya account system hi nahi hai.</p>
+    <h3>Doosri Websites Ke Links</h3>
+    <p>Is page par kuch links doosri websites ke ho sakte hain (jaise Google Ads Settings). Un websites ki apni privacy policy hoti hai, jis ke hum zimmedar nahi hain.</p>
+    <h3>Policy Me Tabdeeli</h3>
+    <p>Agar is policy me kabhi koi tabdeeli hui to wo isi page par nayi tareekh ke saath likh di jayegi. Koi bhi sawaal ho to neeche Contact hisse se hum se rabta karein.</p>
+  </section>
+
+  <section class="content" id="terms">
+    <h2>📜 Istemal Ki Sharaait (Terms) Aur Disclaimer</h2>
+    <p>GameBazaar ki saari games sirf tafreeh (entertainment) ke liye hain. Games kheltay hue milne wala score sirf khel ka hissa hai — is ka kisi asli inaam, paisay ya cheez se koi talluq nahi. Website baghair pehle bataye kisi bhi game ko badal sakti hai, hata sakti hai ya nayi game add kar sakti hai. Hum koshish karte hain ke saari games har waqt theek chalein, lekin kisi technical wajah se game kabhi ruk jaye to hum us ke zimmedar nahi honge. Is website ka content aur games baghair ijazat copy karke kisi doosri jagah istemal karna mana hai.</p>
+  </section>
+
+  <section class="content" id="contact">
+    <h2>✉️ Rabta Karo (Contact Us)</h2>
+    <p>GameBazaar kis ne banaya? Ye website ek chhoti si team ki mehnat hai jo Pakistan ke gamers ke liye free aur halki phulki games banana chahti hai — taake har banda, chahe us ke paas mehnga phone ho ya sasta, slow net ho ya tez, kahin bhi baith kar do minute ka mazaa le sake.</p>
+    <p>Koi masla hai? Kisi game me kami hai? Nayi game ki farmaish hai? Ya apna karobar hai aur is website par <b>apna ishtehaar (advertisement)</b> lagwana chahte hain? Humein email karein, hum jawwab dene ki poori koshish karenge:</p>
+    <p style="font-size:19px">📧 Email: <a href="mailto:umarhayat12963@gmail.com">umarhayat12963@gmail.com</a></p>
+    <p>Email me game ka naam aur masla saaf likhein taake hum jaldi madad kar saken. Aap ki har raaye humaray liye qeemti hai.</p>
+  </section>
+</main>
+
+<footer>
+  <b>GameBazaar</b> — 50 free online games, bina download ke.<br>
+  Saari games isi page ke andar chalti hain. Maza karo, doston ke saath share karo! 🎮<br><br>
+  <a href="#games">Games</a> • <a href="#about">About Us</a> • <a href="#guides">Game Guides</a> • <a href="#faq">FAQ</a> • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms</a> • <a href="#contact">Contact Us</a><br>
+  <span style="font-size:12px">© 2026 GameBazaar — Tamaam haqooq mehfooz hain.</span>
+</footer>
+
+<!-- PLAYER -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="p-head">
+    <button class="iconbtn" id="btnClose" aria-label="Band karo">✕</button>
+    <h2 id="pTitle">Game</h2>
+    <div class="score" id="pScore">Score: 0</div>
+    <button class="iconbtn" id="btnRestart" aria-label="Dobara shuru">↻</button>
+  </div>
+  <div class="p-body">
+    <p class="p-desc" id="pDesc"></p>
+    <div class="stage" id="stage"></div>
+    <div class="msg" id="pMsg"></div>
+    <div class="p-controls" id="pControls"></div>
+  </div>
+</div>
+
+<script>
+/* ============ 50 GAMES LIST ============ */
+var CATS=["Sab Games","Action","Puzzle","Classic","Sports","Racing","Dimag"];
+var GAMES=[
+{id:"snake",t:"Snake Classic",u:"Saanp Wala Game",cat:"Classic",icon:"🐍",c:"#7CFC00",d:"Seb khao, saanp lamba karo, deewar se mat takrao!",e:"snake"},
+{id:"bus",t:"Jutt Express Bus Driver",u:"Bus Chalao Lahore Me",cat:"Racing",icon:"🚌",c:"#FF7A29",d:"Bus ko traffic se bacha kar chalao, jitna door jaoge utna score!",e:"car",skin:"bus"},
+{id:"flappy",t:"Flappy Bird",u:"Urta Panchhi",cat:"Action",icon:"🐤",c:"#FFD93D",d:"Tap karke panchhi ko pipes ke beech se urao!",e:"flappy"},
+{id:"g2048",t:"2048 Puzzle",u:"Number Joro Game",cat:"Puzzle",icon:"🔢",c:"#FF9F1C",d:"Same number wali tiles joro aur 2048 tak pohancho!",e:"g2048"},
+{id:"tetris",t:"Block Tetris",u:"Block Lagao",cat:"Puzzle",icon:"🧱",c:"#2EE6FF",d:"Girte blocks ko line me lagao, line bante hi gayab!",e:"tetris"},
+{id:"memory",t:"Memory Match",u:"Yaad Daasht Game",cat:"Dimag",icon:"🃏",c:"#FF3E8A",d:"Cards ultao aur same jori (pair) dhoondo!",e:"memory"},
+{id:"ttt",t:"Tic Tac Toe",u:"Kata Zero",cat:"Classic",icon:"❌",c:"#B388FF",d:"Computer ke khilaf X aur O — 3 ek line me lagao, jeet jao!",e:"ttt"},
+{id:"breakout",t:"Breakout Bricks",u:"Eentain Toro",cat:"Classic",icon:"🧱",c:"#FF5252",d:"Ball se saari eentain toro, ball neeche na girne do!",e:"breakout"},
+{id:"pong",t:"Pong Solo",u:"Ping Pong",cat:"Classic",icon:"🏓",c:"#69F0AE",d:"Paddle ghumao, ball ko rok rok kar score banao!",e:"pong"},
+{id:"dino",t:"Dino Runner",u:"Daurta Dino",cat:"Action",icon:"🦖",c:"#A1887F",d:"Cactus par se jump lagao, jitna tez utna maza!",e:"dino"},
+{id:"car",t:"Car Race Dodge",u:"Car Race",cat:"Racing",icon:"🏎️",c:"#FF3E8A",d:"Apni car ko dusri caron se bachao, speed barhti jayegi!",e:"car",skin:"car"},
+{id:"shooter",t:"Space Shooter",u:"Jahaz Se Firing",cat:"Action",icon:"🚀",c:"#2EE6FF",d:"Spaceship chalao, dushman jahazon ko urao!",e:"shooter"},
+{id:"whack",t:"Whack a Mole",u:"Chooha Maro",cat:"Action",icon:"🔨",c:"#FFD93D",d:"Bil se nikalte choohay ko foran tap karo!",e:"whack"},
+{id:"simon",t:"Simon Colors",u:"Rang Yaad Karo",cat:"Dimag",icon:"🎨",c:"#FF7A29",d:"Rangon ka order dekho, yaad karo, waisa hi dabao!",e:"simon"},
+{id:"catch",t:"Fruit Catcher",u:"Phal Pakro",cat:"Action",icon:"🍎",c:"#7CFC00",d:"Tokri ghuma kar girte phal pakro, bomb se bacho!",e:"catch"},
+{id:"pop",t:"Balloon Pop",u:"Ghubbaray Phoro",cat:"Action",icon:"🎈",c:"#FF3E8A",d:"Upar uthtay ghubbaray tap karke phoro, time khatam hone se pehle!",e:"pop"},
+{id:"mines",t:"Minesweeper",u:"Surang Dhoondo",cat:"Dimag",icon:"💣",c:"#90A4AE",d:"Socho samjho dabao — bomb wali jagah se bach kar saari khali jagah kholo!",e:"mines"},
+{id:"slide",t:"Sliding Puzzle",u:"Tasveer Joro",cat:"Puzzle",icon:"🧩",c:"#4FC3F7",d:"Tiles sarka kar 1 se 15 number seedhi line me lagao!",e:"slide"},
+{id:"connect4",t:"Connect Four",u:"Char Joro",cat:"Classic",icon:"🔴",c:"#FFD93D",d:"Computer se pehle apne 4 gole ek line me joro!",e:"connect4"},
+{id:"reaction",t:"Reaction Speed",u:"Kitne Tez Ho?",cat:"Dimag",icon:"⚡",c:"#C6FF3A",d:"Hara rang hote hi foran tap! Dekho tum kitne tez ho.",e:"reaction"},
+{id:"targets",t:"Target Shooter",u:"Nishana Lagao",cat:"Action",icon:"🎯",c:"#FF5252",d:"Nishano par foran click karo, waqt sirf 30 second!",e:"targets"},
+{id:"ludo",t:"Ludo Dice Race",u:"Ludo Goti Race",cat:"Classic",icon:"🎲",c:"#FF9F1C",d:"Paasa (dice) phenko aur apni goti ko pehle finish tak pohanchao!",e:"ludo"},
+{id:"cricket",t:"Cricket Timing",u:"Chhakka Maro!",cat:"Sports",icon:"🏏",c:"#7CFC00",d:"Ball theek time par maro — der ki to bowled, jaldi ki to miss!",e:"cricket"},
+{id:"penalty",t:"Football Penalty",u:"Goal Karo!",cat:"Sports",icon:"⚽",c:"#2EE6FF",d:"Corner chun kar goal karo, keeper ko dhoka do! 10 shots, zyada goals jeet!",e:"penalty"},
+{id:"basket",t:"Basketball Shoot",u:"Basket Daalo",cat:"Sports",icon:"🏀",c:"#FF7A29",d:"Meter rok kar perfect shot maro aur basket daalo!",e:"basket"},
+{id:"bowling",t:"Bowling King",u:"Pin Girao",cat:"Sports",icon:"🎳",c:"#B388FF",d:"Timing theek karo, ball phenko, saari pins girao!",e:"basket",skin:"bowl"},
+{id:"archery",t:"Archery Hit",u:"Teer Chalao",cat:"Sports",icon:"🏹",c:"#FFD93D",d:"Hilte nishane par theek time par teer chalao!",e:"archery"},
+{id:"zombie",t:"Zombie Tap",u:"Zombie Maro",cat:"Action",icon:"🧟",c:"#69F0AE",d:"Aatay hue zombie par tap karke maro, apni line tak na aanay do!",e:"whack",skin:"zombie"},
+{id:"candy",t:"Candy Pop",u:"Toffee Joro",cat:"Puzzle",icon:"🍬",c:"#FF3E8A",d:"Ek hi rang ki lagi hui toffiyan tap karo, zyada jor = zyada score!",e:"candy"},
+{id:"hangman",t:"Word Guess",u:"Lafz Bujho",cat:"Dimag",icon:"🔤",c:"#4FC3F7",d:"Harf bujh kar chhupa hua angrezi lafz mukammal karo!",e:"hangman"},
+{id:"numguess",t:"Number Guess",u:"Number Bujho",cat:"Dimag",icon:"❓",c:"#C6FF3A",d:"Computer ne 1-100 me number socha hai, kam koshish me bujho!",e:"numguess"},
+{id:"mathquiz",t:"Math Quiz Speed",u:"Hisab Kitab Race",cat:"Dimag",icon:"➕",c:"#FF9F1C",d:"60 second me zyada se zyada sawaalon ka sahi jawab do!",e:"quiz",kind:"math"},
+{id:"typing",t:"Typing Speed",u:"Type Karo Tez",cat:"Dimag",icon:"⌨️",c:"#90A4AE",d:"Diya gaya lafz foran type karo — dekho kitne lafz kar sakte ho!",e:"typing"},
+{id:"piano",t:"Piano Tiles",u:"Piano Bajao",cat:"Action",icon:"🎹",c:"#FFFFFF",d:"Upar se aati kaali tiles tap karo, safed par tap kiya to out!",e:"piano"},
+{id:"stack",t:"Stack Tower",u:"Tower Banao",cat:"Puzzle",icon:"🏗️",c:"#FF7A29",d:"Theek time par tap karke lamba tower banao!",e:"stack"},
+{id:"heli",t:"Helicopter Fly",u:"Helicopter Urao",cat:"Action",icon:"🚁",c:"#2EE6FF",d:"Button daba kar helicopter urao, paharon se bacho!",e:"flappy",skin:"heli"},
+{id:"asteroids",t:"Asteroid Dodge",u:"Pathron Se Bacho",cat:"Action",icon:"☄️",c:"#B388FF",d:"Jahaz ghuma kar girte pathron se bacho, jitna bache utna score!",e:"asteroids"},
+{id:"tank",t:"Tank Battle",u:"Tank Jang",cat:"Action",icon:"🛡️",c:"#69F0AE",d:"Tank ghumao aur aatay dushmanon par goli chalao!",e:"shooter",skin:"tank"},
+{id:"pacman",t:"Pac Maze",u:"Bhool Bhulaiya Khana",cat:"Classic",icon:"🟡",c:"#FFD93D",d:"Saare khane khao, bhoot se bacho!",e:"pacman"},
+{id:"frogger",t:"Road Cross",u:"Sarak Paar Karo",cat:"Classic",icon:"🐸",c:"#7CFC00",d:"Mendhak ko garion se bacha kar sarak paar karao!",e:"frogger"},
+{id:"hockey",t:"Air Hockey",u:"Hockey Muqabla",cat:"Sports",icon:"🏒",c:"#2EE6FF",d:"Computer ke khilaf air hockey — pehle 5 goal jeet!",e:"hockey"},
+{id:"sudoku",t:"Sudoku 4x4",u:"Number Sudoku",cat:"Puzzle",icon:"🔣",c:"#FF9F1C",d:"Har line aur box me 1-4 number ek hi baar aaye!",e:"sudoku"},
+{id:"wordsearch",t:"Quiz Duniya",u:"Aam Maloomat Quiz",cat:"Dimag",icon:"🌍",c:"#4FC3F7",d:"Pakistan aur duniya ke mazaydaar sawaal — kitne sahi jawab doge?",e:"quiz",kind:"gk"},
+{id:"bubble",t:"Bubble Pop Pro",u:"Bulbulay Phoro 2",cat:"Action",icon:"🫧",c:"#FF3E8A",d:"Bulbulay tez tez aayenge — 45 second me zyada phoro!",e:"pop",skin:"bubble"},
+{id:"maze",t:"Maze Escape",u:"Rasta Dhoondo",cat:"Puzzle",icon:"🌀",c:"#C6FF3A",d:"Bhool bhulaiya se bahar nikalne ka rasta dhoondo!",e:"maze"},
+{id:"runner",t:"Endless Runner",u:"Bhaag Milkha Bhaag",cat:"Racing",icon:"🏃",c:"#FF5252",d:"Rukawaton par jump, neeche wali par duck — girna mat!",e:"dino",skin:"runner"},
+{id:"bike",t:"Bike Rider",u:"Bike Chalao",cat:"Racing",icon:"🏍️",c:"#FF7A29",d:"Bike ko pahari raste par chalao, palatna mat!",e:"car",skin:"bike"},
+{id:"fishing",t:"Fishing Fun",u:"Machli Pakro",cat:"Sports",icon:"🎣",c:"#2EE6FF",d:"Kanta daalo, machli aate hi kheecho — zyada machli, zyada score!",e:"fishing"},
+{id:"checkers",t:"Color Rush",u:"Rang Pehchano",cat:"Dimag",icon:"🌈",c:"#FFD93D",d:"Lafz ka asal rang batao, rang ke naam par mat jao! Stroop test game.",e:"colorrush"},
+{id:"tetris2",t:"Car Parking Tap",u:"Gaari Park Karo",cat:"Racing",icon:"🅿️",c:"#90A4AE",d:"Gaari theek jagah aate hi tap karo aur park karo!",e:"parking"}
+];
+</script>
+<script>
+/* ============ PLAYER CORE ============ */
+var $=function(id){return document.getElementById(id)};
+var grid=$("grid"),catsEl=$("cats"),curCat="Sab Games";
+CATS.forEach(function(c){var b=document.createElement("button");b.className="cat"+(c===curCat?" active":"");b.textContent=c;b.onclick=function(){curCat=c;document.querySelectorAll(".cat").forEach(function(x){x.classList.toggle("active",x.textContent===c)});render()};catsEl.appendChild(b)});
+function render(){
+ var q=$("search").value.trim().toLowerCase();
+ var list=GAMES.filter(function(g){return (curCat==="Sab Games"||g.cat===curCat)&&(!q||g.t.toLowerCase().indexOf(q)>-1||g.u.toLowerCase().indexOf(q)>-1||g.d.toLowerCase().indexOf(q)>-1)});
+ grid.innerHTML="";
+ list.forEach(function(g){
+  var card=document.createElement("div");card.className="card";card.style.setProperty("--c",g.c);
+  card.innerHTML='<div class="icon">'+g.icon+'</div><h3>'+g.t+'</h3><div class="urdu">'+g.u+'</div><p>'+g.d+'</p><div class="meta"><span class="tag">'+g.cat+'</span></div>';
+  var pb=document.createElement("button");pb.className="play";pb.textContent="▶ Play";pb.setAttribute("data-play",g.id);
+  pb.style.background=g.c;card.querySelector(".meta").appendChild(pb);grid.appendChild(card);
+ });
+ $("empty").style.display=list.length?"none":"block";
+ $("countline").textContent=list.length+" games mil gayi — apni pasand chuno aur khelo!";
+}
+$("search").addEventListener("input",render);render();
+document.addEventListener("click",function(ev){var b=ev.target.closest("[data-play]");if(b)openGame(b.getAttribute("data-play"))});
+
+var overlay=$("overlay"),stage=$("stage"),score=0,cleanup=null,curGame=null,keyHandler=null;
+function setScore(v){score=v;$("pScore").textContent="Score: "+v}
+function setMsg(t){$("pMsg").textContent=t||""}
+function setControls(html){$("pControls").innerHTML=html||""}
+function stopGame(){if(cleanup){try{cleanup()}catch(e){}cleanup=null}if(keyHandler){document.removeEventListener("keydown",keyHandler);keyHandler=null}}
+function openGame(id){
+ var g=null;GAMES.forEach(function(x){if(x.id===id)g=x});if(!g)return;
+ curGame=g;stopGame();stage.innerHTML="";setControls("");setMsg("");setScore(0);
+ $("pTitle").textContent=g.icon+" "+g.t;$("pDesc").textContent=g.d;
+ overlay.classList.add("open");document.body.style.overflow="hidden";
+ ENGINES[g.e](g);
+}
+function closeGame(){stopGame();overlay.classList.remove("open");document.body.style.overflow=""}
+$("btnClose").onclick=closeGame;
+$("btnRestart").onclick=function(){if(curGame)openGame(curGame.id)};
+/* canvas helper */
+function mkCanvas(w,h){
+ stage.innerHTML='<canvas class="game" width="'+w+'" height="'+h+'"></canvas>';
+ var cv=stage.querySelector("canvas"),ctx=cv.getContext("2d");
+ var raf=null,timers=[];
+ function loop(fn){var last=0;function f(ts){fn(ts);raf=requestAnimationFrame(f)}raf=requestAnimationFrame(f)}
+ function every(ms,fn){var i=setInterval(fn,ms);timers.push(i);return i}
+ cleanup=function(){if(raf)cancelAnimationFrame(raf);timers.forEach(clearInterval)};
+ return {cv:cv,ctx:ctx,loop:loop,every:every,W:w,H:h};
+}
+function tapBtn(label,fn,cls){var b=document.createElement("button");b.textContent=label;if(cls)b.className=cls;b.onclick=fn;return b}
+function dpad(onDir){
+ var d=document.createElement("div");d.className="dpad";
+ d.innerHTML='<span></span><button>⬆</button><span></span><button>⬅</button><button>⬇</button><button>➡</button>';
+ var bs=d.querySelectorAll("button");
+ bs[0].onclick=function(){onDir(0,-1)};bs[1].onclick=function(){onDir(-1,0)};bs[2].onclick=function(){onDir(0,1)};bs[3].onclick=function(){onDir(1,0)};
+ $("pControls").appendChild(d);
+}
+var ENGINES={};
+
+/* ============ CANVAS GAMES ============ */
+ENGINES.snake=function(){
+ var C=mkCanvas(400,400),ctx=C.ctx,sx=10,sy=10,dx=1,dy=0,body=[[10,10]],food=[5,5],dead=false;
+ setMsg("Arrows ya neeche walay buttons se saanp chalao!");
+ dpad(function(x,y){if(dx!==-x||dy!==-y){dx=x;dy=y}});
+ keyHandler=function(e){var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();if(dx!==-m[0]||dy!==-m[1]){dx=m[0];dy=m[1]}}};
+ document.addEventListener("keydown",keyHandler);
+ C.every(140,function(){
+  if(dead)return;sx+=dx;sy+=dy;
+  if(sx<0||sy<0||sx>19||sy>19||body.some(function(b){return b[0]===sx&&b[1]===sy})){dead=true;setMsg("💥 Game Over! Score: "+score+" — ↻ se dobara khelo");return}
+  body.unshift([sx,sy]);
+  if(sx===food[0]&&sy===food[1]){setScore(score+10);food=[Math.floor(Math.random()*20),Math.floor(Math.random()*20)]}else body.pop();
+  ctx.fillStyle="#0A0A14";ctx.fillRect(0,0,400,400);
+  ctx.fillStyle="#FF5252";ctx.fillRect(food[0]*20+2,food[1]*20+2,16,16);
+  ctx.fillStyle="#7CFC00";body.forEach(function(b){ctx.fillRect(b[0]*20+1,b[1]*20+1,18,18)});
+ });
+};
+ENGINES.flappy=function(g){
+ var heli=g.skin==="heli";
+ var C=mkCanvas(400,480),ctx=C.ctx,y=220,v=0,pipes=[[420,180]],dead=false,started=false;
+ setMsg(heli?"Button daba kar helicopter upar rakho!":"Tap / Space se panchhi urao!");
+ setControls("");$("pControls").appendChild(tapBtn(heli?"⬆ UPAR":"🪽 TAP / UDAO",flap,"primary"));
+ function flap(){if(dead)return;started=true;v=-8}
+ C.cv.addEventListener("pointerdown",flap);
+ keyHandler=function(e){if(e.code==="Space"){e.preventDefault();flap()}};
+ document.addEventListener("keydown",keyHandler);
+ var frame=0;
+ C.loop(function(){
+  ctx.fillStyle=heli?"#0D1B2A":"#70C5CE";ctx.fillRect(0,0,400,480);
+  if(started&&!dead){v+=0.45;y+=v;frame++;
+   if(frame%95===0)pipes.push([420,110+Math.random()*220]);
+   pipes.forEach(function(p){p[0]-=3});
+   pipes=pipes.filter(function(p){return p[0]>-60});
+   if(pipes.length&&pipes[0][0]===118)setScore(score+1);
+   if(y<0||y>452)dead=true;
+   pipes.forEach(function(p){if(52>p[0]&&20<p[0]+52&&(y<p[1]-70||y+24>p[1]+70))dead=true});
+  }
+  ctx.fillStyle="#2E7D32";pipes.forEach(function(p){ctx.fillRect(p[0],0,52,p[1]-70);ctx.fillRect(p[0],p[1]+70,52,480)});
+  ctx.font="34px serif";ctx.fillText(heli?"🚁":"🐤",22,y);
+  if(dead)setMsg("💥 Takra gaye! Score: "+score+" — ↻ dabao");
+  if(!started){ctx.fillStyle="#fff";ctx.font="bold 19px Nunito";ctx.fillText("Tap karke shuru karo!",105,240)}
+ });
+};
+ENGINES.breakout=function(){
+ var C=mkCanvas(400,440),ctx=C.ctx,px=160,bx=200,by=300,vx=3,vy=-3,bricks=[],dead=false,won=false;
+ for(var r=0;r<5;r++)for(var c=0;c<8;c++)bricks.push({x:8+c*49,y:36+r*24,on:true});
+ setMsg("Mouse / ungli se paddle ghumao!");
+ function move(x){var r=C.cv.getBoundingClientRect();px=Math.max(0,Math.min(320,(x-r.left)/r.width*400-40))}
+ C.cv.addEventListener("pointermove",function(e){move(e.clientX)});
+ C.cv.addEventListener("pointerdown",function(e){move(e.clientX)});
+ keyHandler=function(e){if(e.key==="ArrowLeft")px=Math.max(0,px-24);if(e.key==="ArrowRight")px=Math.min(320,px+24)};
+ document.addEventListener("keydown",keyHandler);
+ var cols=["#FF5252","#FF9F1C","#FFD93D","#7CFC00","#2EE6FF"];
+ C.loop(function(){
+  ctx.fillStyle="#0A0A14";ctx.fillRect(0,0,400,440);
+  if(!dead&&!won){bx+=vx;by+=vy;
+   if(bx<8||bx>392)vx*=-1;if(by<8)vy*=-1;
+   if(by>440){dead=true;setMsg("😢 Ball gir gayi! Score: "+score)}
+   if(by>404&&by<420&&bx>px&&bx<px+80){vy=-Math.abs(vy);vx=(bx-(px+40))/9}
+   bricks.forEach(function(b){if(b.on&&bx>b.x&&bx<b.x+44&&by>b.y&&by<b.y+18){b.on=false;vy*=-1;setScore(score+10)}});
+   if(bricks.every(function(b){return !b.on})){won=true;setMsg("🏆 Saari eentain tor dein! Score: "+score)}
+  }
+  bricks.forEach(function(b,i){if(b.on){ctx.fillStyle=cols[Math.floor(i/8)];ctx.fillRect(b.x,b.y,44,18)}});
+  ctx.fillStyle="#fff";ctx.fillRect(px,418,80,12);
+  ctx.fillStyle="#FFD93D";ctx.beginPath();ctx.arc(bx,by,8,0,7);ctx.fill();
+ });
+};
+ENGINES.pong=function(){
+ var C=mkCanvas(400,400),ctx=C.ctx,py=160,by=200,bx=200,vx=3.4,vy=2.6,cy=160,comp=0,dead=false;
+ setMsg("Pehle 7 point jeet! Mouse/ungli ya arrows se paddle ghumao.");
+ function move(y){var r=C.cv.getBoundingClientRect();py=Math.max(0,Math.min(320,(y-r.top)/r.height*400-40))}
+ C.cv.addEventListener("pointermove",function(e){move(e.clientY)});C.cv.addEventListener("pointerdown",function(e){move(e.clientY)});
+ keyHandler=function(e){if(e.key==="ArrowUp")py=Math.max(0,py-22);if(e.key==="ArrowDown")py=Math.min(320,py+22)};
+ document.addEventListener("keydown",keyHandler);
+ C.loop(function(){
+  ctx.fillStyle="#0A0A14";ctx.fillRect(0,0,400,400);
+  ctx.strokeStyle="#2A2A44";ctx.beginPath();ctx.moveTo(200,0);ctx.lineTo(200,400);ctx.stroke();
+  if(!dead){bx+=vx;by+=vy;if(by<8||by>392)vy*=-1;
+   cy+=((by-40)-cy)*0.07;cy=Math.max(0,Math.min(320,cy));
+   if(bx<20&&by>py&&by<py+80){vx=Math.abs(vx)*1.03;bx=20}
+   if(bx>380&&by>cy&&by<cy+80){vx=-Math.abs(vx)*1.03;bx=380}
+   if(bx<0){comp++;bx=200;by=200;vx=3.4;if(comp>=7){dead=true;setMsg("😢 Computer jeet gaya "+comp+"-"+score+" — dobara try karo!")}}
+   if(bx>400){setScore(score+1);bx=200;by=200;vx=-3.4;if(score>=7){dead=true;setMsg("🏆 Tum jeet gaye! 7-"+comp)}else setMsg("Tum "+score+" — Computer "+comp)}
+  }
+  ctx.fillStyle="#C6FF3A";ctx.fillRect(8,py,10,80);ctx.fillStyle="#FF3E8A";ctx.fillRect(382,cy,10,80);
+  ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(bx,by,8,0,7);ctx.fill();
+  ctx.font="bold 22px Fredoka";ctx.fillStyle="#C6FF3A";ctx.fillText(score,170,34);ctx.fillStyle="#FF3E8A";ctx.fillText(comp,218,34);
+ });
+};
+ENGINES.dino=function(g){
+ var runner=g.skin==="runner";
+ var C=mkCanvas(400,240),ctx=C.ctx,y=0,v=0,jump=false,obs=[430],sp=4,dead=false,dist=0;
+ setMsg("Tap / Space se jump! "+(runner?"Neeche wali rukawat par ⬇ duck bhi hai (sirf jump chalega, koshish karo!)":""));
+ function doJump(){if(!jump&&!dead){v=-11.5;jump=true}}
+ C.cv.addEventListener("pointerdown",doJump);
+ setControls("");$("pControls").appendChild(tapBtn("⬆ JUMP",doJump,"primary"));
+ keyHandler=function(e){if(e.code==="Space"||e.key==="ArrowUp"){e.preventDefault();doJump()}};
+ document.addEventListener("keydown",keyHandler);
+ C.loop(function(){
+  ctx.fillStyle="#FFF8E1";ctx.fillRect(0,0,400,240);ctx.fillStyle="#8D6E63";ctx.fillRect(0,198,400,4);
+  if(!dead){y+=v;v+=0.6;if(y>=0){y=0;jump=false}
+   sp=4+score/160;dist++;
+   if(dist%6===0)setScore(score+1);
+   obs.forEach(function(o,i){obs[i]-=sp});
+   if(obs[obs.length-1]<260)obs.push(430+Math.random()*160);
+   obs=obs.filter(function(o){return o>-40});
+   obs.forEach(function(o){if(o>34&&o<72&&y>-34)dead=true});
+   if(dead)setMsg("💥 Takkar! Score: "+score+" — ↻ se dobara")
+  }
+  ctx.font="40px serif";ctx.fillText(runner?"🏃":"🦖",32,192+y);
+  ctx.font="34px serif";obs.forEach(function(o){ctx.fillText(runner?"🧱":"🌵",o,196)});
+ });
+};
+ENGINES.car=function(g){
+ var skin=g.skin||"car";
+ var icons={car:"🏎️",bus:"🚌",bike:"🏍️"},foes={car:["🚗","🚙","🚕"],bus:["🚗","🚙","🛺"],bike:["🚗","🚙","🚛"]};
+ var C=mkCanvas(400,480),ctx=C.ctx,lane=1,obs=[],dead=false,frame=0;
+ setMsg("⬅ ➡ se lane badlo, garion se bacho!");
+ setControls("");var L=tapBtn("⬅ LEFT",function(){lane=Math.max(0,lane-1)}),R=tapBtn("RIGHT ➡",function(){lane=Math.min(2,lane+1)});
+ $("pControls").appendChild(L);$("pControls").appendChild(R);
+ keyHandler=function(e){if(e.key==="ArrowLeft")lane=Math.max(0,lane-1);if(e.key==="ArrowRight")lane=Math.min(2,lane+1)};
+ document.addEventListener("keydown",keyHandler);
+ C.loop(function(){
+  ctx.fillStyle="#263238";ctx.fillRect(0,0,400,480);
+  ctx.fillStyle="#37474F";ctx.fillRect(60,0,280,480);
+  ctx.strokeStyle="#FFD93D";ctx.setLineDash([22,20]);ctx.lineWidth=4;
+  [126,266].forEach(function(x){ctx.beginPath();ctx.moveTo(x,(frame*6)%42-42);ctx.lineTo(x,480);ctx.stroke()});ctx.setLineDash([]);
+  if(!dead){frame++;
+   if(frame%70===0)obs.push({l:Math.floor(Math.random()*3),y:-60,i:Math.floor(Math.random()*3)});
+   var sp=4+score/220;
+   obs.forEach(function(o){o.y+=sp});
+   obs=obs.filter(function(o){return o.y<520});
+   obs.forEach(function(o){if(o.l===lane&&o.y>340&&o.y<440)dead=true});
+   if(frame%10===0)setScore(score+1);
+   if(dead)setMsg("💥 Accident! Score: "+score+" — ↻ dabao aur dobara chalao")
+  }
+  ctx.font="52px serif";obs.forEach(function(o){ctx.fillText(foes[skin][o.i],78+o.l*94,o.y+44)});
+  ctx.fillText(icons[skin],78+lane*94,442);
+ });
+};
+ENGINES.shooter=function(g){
+ var tank=g.skin==="tank";
+ var C=mkCanvas(400,460),ctx=C.ctx,x=185,bullets=[],foes=[],dead=false,frame=0;
+ setMsg("⬅ ➡ ghumao, FIRE dabate raho!");
+ setControls("");$("pControls").appendChild(tapBtn("⬅",function(){x=Math.max(0,x-26)}));
+ $("pControls").appendChild(tapBtn("🔥 FIRE",fire,"primary"));$("pControls").appendChild(tapBtn("➡",function(){x=Math.min(350,x+26)}));
+ function fire(){if(!dead)bullets.push([x+22,380])}
+ C.cv.addEventListener("pointermove",function(e){var r=C.cv.getBoundingClientRect();x=Math.max(0,Math.min(350,(e.clientX-r.left)/r.width*400-25))});
+ keyHandler=function(e){if(e.key==="ArrowLeft")x=Math.max(0,x-26);if(e.key==="ArrowRight")x=Math.min(350,x+26);if(e.code==="Space"){e.preventDefault();fire()}};
+ document.addEventListener("keydown",keyHandler);
+ C.every(260,function(){fire()});
+ C.loop(function(){
+  ctx.fillStyle=tank?"#1B2A1B":"#050514";ctx.fillRect(0,0,400,460);
+  if(!tank){ctx.fillStyle="#fff";for(var i=0;i<28;i++)ctx.fillRect((i*67)%400,(i*43+frame)%460,2,2)}
+  if(!dead){frame++;
+   if(frame%52===0)foes.push({x:Math.random()*350,y:-40});
+   bullets.forEach(function(b){b[1]-=9});bullets=bullets.filter(function(b){return b[1]>-10});
+   foes.forEach(function(f){f.y+=1.7});
+   foes.forEach(function(f){bullets.forEach(function(b){if(Math.abs(b[0]-f.x-22)<26&&Math.abs(b[1]-f.y-20)<26){f.y=-999;b[1]=-999;setScore(score+10)}})});
+   foes=foes.filter(function(f){return f.y>-100});
+   foes.forEach(function(f){if(f.y>370)dead=true});
+   if(dead)setMsg("💥 Dushman pohanch gaya! Score: "+score)
+  }
+  ctx.fillStyle="#FFD93D";bullets.forEach(function(b){ctx.fillRect(b[0],b[1],4,12)});
+  ctx.font="46px serif";foes.forEach(function(f){ctx.fillText(tank?"🚙":"👾",f.x,f.y+38)});
+  ctx.fillText(tank?"🛡️":"🚀",x,428);
+ });
+};
+ENGINES.catch=function(){
+ var C=mkCanvas(400,440),ctx=C.ctx,x=170,items=[],dead=false,miss=0,frame=0;
+ setMsg("Tokri ghumao, phal pakro — bomb 💣 aur miss se bacho! 3 miss = out");
+ C.cv.addEventListener("pointermove",function(e){var r=C.cv.getBoundingClientRect();x=Math.max(0,Math.min(330,(e.clientX-r.left)/r.width*400-35))});
+ keyHandler=function(e){if(e.key==="ArrowLeft")x=Math.max(0,x-20);if(e.key==="ArrowRight")x=Math.min(330,x+20)};
+ document.addEventListener("keydown",keyHandler);
+ var fruits=["🍎","🍌","🍊","🍇","🍓","💣"];
+ C.loop(function(){
+  ctx.fillStyle="#E8F5E9";ctx.fillRect(0,0,400,440);
+  if(!dead){frame++;
+   if(frame%44===0)items.push({x:Math.random()*360,y:-30,i:Math.floor(Math.random()*6)});
+   items.forEach(function(it){it.y+=3.4});
+   items.forEach(function(it){
+    if(it.y>368&&it.y<400&&Math.abs(it.x-x-22)<48){it.y=999;
+     if(it.i===5){dead=true;setMsg("💣 Bomb pakra! Score: "+score)}else setScore(score+5)}
+    else if(it.y>440){it.y=999;if(it.i!==5){miss++;setMsg("Miss: "+miss+" / 3");if(miss>=3){dead=true;setMsg("😢 3 phal miss! Final Score: "+score)}}}
+   });
+   items=items.filter(function(it){return it.y<900});
+  }
+  ctx.font="34px serif";items.forEach(function(it){ctx.fillText(fruits[it.i],it.x,it.y)});
+  ctx.font="52px serif";ctx.fillText("🧺",x,424);
+ });
+};
+ENGINES.asteroids=function(){
+ var C=mkCanvas(400,440),ctx=C.ctx,x=180,y=380,rocks=[],dead=false,frame=0;
+ setMsg("Arrows / ungli se jahaz ghumao, pathron se bacho!");
+ C.cv.addEventListener("pointermove",function(e){var r=C.cv.getBoundingClientRect();x=Math.max(0,Math.min(360,(e.clientX-r.left)/r.width*400-20));y=Math.max(60,Math.min(400,(e.clientY-r.top)/r.height*440-20))});
+ keyHandler=function(e){var s=18;if(e.key==="ArrowLeft")x=Math.max(0,x-s);if(e.key==="ArrowRight")x=Math.min(360,x+s);if(e.key==="ArrowUp")y=Math.max(60,y-s);if(e.key==="ArrowDown")y=Math.min(400,y+s)};
+ document.addEventListener("keydown",keyHandler);
+ C.loop(function(){
+  ctx.fillStyle="#050514";ctx.fillRect(0,0,400,440);ctx.fillStyle="#fff";
+  for(var i=0;i<24;i++)ctx.fillRect((i*71)%400,(i*37+frame*2)%440,2,2);
+  if(!dead){frame++;
+   if(frame%30===0)rocks.push({x:Math.random()*370,y:-34,s:2+Math.random()*2.4});
+   rocks.forEach(function(r){r.y+=r.s});
+   rocks=rocks.filter(function(r){return r.y<480});
+   rocks.forEach(function(r){if(Math.abs(r.x-x)<28&&Math.abs(r.y-y)<28)dead=true});
+   if(frame%8===0)setScore(score+1);
+   if(dead)setMsg("💥 Pathar takraya! Score: "+score)
+  }
+  ctx.font="36px serif";rocks.forEach(function(r){ctx.fillText("☄️",r.x,r.y+30)});
+  ctx.fillText("🛸",x,y+30);
+ });
+};
+ENGINES.pacman=function(){
+ var C=mkCanvas(400,400),ctx=C.ctx,px=40,py=40,gx=340,gy=320,dots=[],dead=false,won=false;
+ for(var i=0;i<9;i++)for(var j=0;j<9;j++)dots.push([30+i*42,30+j*42]);
+ setMsg("Arrows/buttons se khana khao, bhoot 👻 se bacho!");
+ function dir(x,y){px=Math.max(6,Math.min(360,px+x*20));py=Math.max(26,Math.min(366,py+y*20))}
+ dpad(dir);
+ keyHandler=function(e){var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();dir(m[0],m[1])}};
+ document.addEventListener("keydown",keyHandler);
+ C.every(420,function(){
+  if(dead||won)return;
+  gx+=Math.sign(px-gx)*20;gy+=Math.sign(py-gy)*20;
+  if(Math.abs(gx-px)<22&&Math.abs(gy-py)<22){dead=true;setMsg("👻 Bhoot ne pakar liya! Score: "+score)}
+ });
+ C.loop(function(){
+  ctx.fillStyle="#000";ctx.fillRect(0,0,400,400);
+  dots=dots.filter(function(d){if(Math.abs(d[0]-px)<20&&Math.abs(d[1]-py)<20){setScore(score+2);return false}return true});
+  if(!dots.length&&!won){won=true;setMsg("🏆 Saara khana kha liya! Score: "+score)}
+  ctx.fillStyle="#FFD93D";dots.forEach(function(d){ctx.beginPath();ctx.arc(d[0],d[1],4,0,7);ctx.fill()});
+  ctx.font="30px serif";ctx.fillText("🟡",px-14,py+10);ctx.fillText("👻",gx-14,gy+10);
+ });
+};
+ENGINES.frogger=function(){
+ var C=mkCanvas(400,440),ctx=C.ctx,fx=180,fy=396,cars=[],dead=false,won=false,frame=0;
+ var lanes=[60,120,180,240,300];
+ setMsg("⬆ ⬇ ⬅ ➡ se mendhak ko upar kinare tak le jao!");
+ function dir(x,y){if(dead||won)return;fx=Math.max(0,Math.min(360,fx+x*36));fy=Math.max(30,Math.min(400,fy+y*36));if(fy<=40){won=true;setScore(score+50);setMsg("🏆 Paar kar liya! +50 — ↻ se dobara")}}
+ dpad(dir);
+ keyHandler=function(e){var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();dir(m[0],m[1])}};
+ document.addEventListener("keydown",keyHandler);
+ lanes.forEach(function(y,i){cars.push({x:(i*130)%400,y:y,s:(i%2? -2.6:2.6)})});
+ C.loop(function(){
+  ctx.fillStyle="#1B5E20";ctx.fillRect(0,0,400,52);ctx.fillStyle="#263238";ctx.fillRect(0,52,400,336);ctx.fillStyle="#1B5E20";ctx.fillRect(0,388,400,52);
+  ctx.strokeStyle="#FFD93D";ctx.setLineDash([18,16]);lanes.forEach(function(y){ctx.beginPath();ctx.moveTo(0,y+28);ctx.lineTo(400,y+28);ctx.stroke()});ctx.setLineDash([]);
+  if(!dead&&!won){frame++;cars.forEach(function(c){c.x+=c.s;if(c.x>420)c.x=-60;if(c.x<-60)c.x=420});
+   cars.forEach(function(c){if(Math.abs(c.x-fx)<38&&Math.abs(c.y-fy)<24)dead=true});
+   if(dead)setMsg("💥 Gaari takra gayi! Score: "+score)}
+  ctx.font="36px serif";cars.forEach(function(c){ctx.fillText("🚗",c.x,c.y+30)});
+  ctx.fillText("🐸",fx,fy+28);
+ });
+};
+ENGINES.hockey=function(){
+ var C=mkCanvas(400,440),ctx=C.ctx,py=380,cy=40,bx=200,by=220,vx=3,vy=3.4,comp=0,over=false;
+ setMsg("Neeche wala paddle tumhara — pehle 5 goal jeet! Mouse/ungli ghumao.");
+ function move(x){var r=C.cv.getBoundingClientRect();py=0;window._hx=Math.max(30,Math.min(370,(x-r.left)/r.width*400))}
+ C.cv.addEventListener("pointermove",function(e){move(e.clientX)});C.cv.addEventListener("pointerdown",function(e){move(e.clientX)});
+ window._hx=200;
+ C.loop(function(){
+  var px=window._hx;
+  ctx.fillStyle="#0D2137";ctx.fillRect(0,0,400,440);
+  ctx.strokeStyle="#2EE6FF";ctx.strokeRect(6,6,388,428);ctx.beginPath();ctx.moveTo(6,220);ctx.lineTo(394,220);ctx.stroke();
+  ctx.fillStyle="#FF3E8A";ctx.fillRect(150,6,100,8);ctx.fillStyle="#C6FF3A";ctx.fillRect(150,426,100,8);
+  if(!over){bx+=vx;by+=vy;if(bx<16||bx>384)vx*=-1;
+   cy+=((bx)-cy)*0.06;cy=Math.max(40,Math.min(360,cy));
+   if(by>396&&by<420&&Math.abs(bx-px)<46){vy=-Math.abs(vy);by=396}
+   if(by>20&&by<44&&Math.abs(bx-cy)<46){vy=Math.abs(vy);by=44}
+   if(by<8){if(bx>150&&bx<250){setScore(score+1);setMsg("⚽ GOAL! Tum "+score+" — Computer "+comp);bx=200;by=220;vy=3.4;if(score>=5){over=true;setMsg("🏆 Tum jeet gaye "+score+"-"+comp+"!")}}else vy=Math.abs(vy)}
+   if(by>432){if(bx>150&&bx<250){comp++;setMsg("😢 Computer ka goal! Tum "+score+" — Computer "+comp);bx=200;by=220;vy=-3.4;if(comp>=5){over=true;setMsg("😢 Computer jeet gaya "+comp+"-"+score)}}else vy=-Math.abs(vy)}
+  }
+  ctx.fillStyle="#FF3E8A";ctx.beginPath();ctx.arc(cy,32,15,0,7);ctx.fill();
+  ctx.fillStyle="#C6FF3A";ctx.beginPath();ctx.arc(px,408,15,0,7);ctx.fill();
+  ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(bx,by,9,0,7);ctx.fill();
+ });
+};
+</script>
+<script>
+/* ============ MORE CANVAS + DOM GAMES ============ */
+ENGINES.tetris=function(){
+ var C=mkCanvas(300,440),ctx=C.ctx,cols=10,rows=15,grid=[],cur=null,cx=4,cy=0,dead=false;
+ for(var i=0;i<rows;i++)grid.push(new Array(cols).fill(0));
+ var shapes=[[[1,1],[1,1]],[[1,1,1,1]],[[0,1,0],[1,1,1]],[[1,0],[1,0],[1,1]],[[1,1,1],[0,1,0]]];
+ var colsArr=["#FF5252","#FFD93D","#7CFC00","#2EE6FF","#FF3E8A"];
+ function spawn(){cur=shapes[Math.floor(Math.random()*shapes.length)];cx=4;cy=0;if(hit(0,0)){dead=true;setMsg("Game Over! Score: "+score)}}
+ function hit(dx,dy,sh){sh=sh||cur;for(var r=0;r<sh.length;r++)for(var c=0;c<sh[r].length;c++)if(sh[r][c]){var x=cx+c+dx,y=cy+r+dy;if(x<0||x>=cols||y>=rows||(y>=0&&grid[y][x]))return true}return false}
+ function lock(){cur.forEach(function(row,r){row.forEach(function(v,c){if(v&&cy+r>=0)grid[cy+r][cx+c]=1})});
+  grid=grid.filter(function(row){return row.some(function(v){return !v})});
+  var cleared=rows-grid.length;while(grid.length<rows)grid.unshift(new Array(cols).fill(0));
+  if(cleared){setScore(score+cleared*20);setMsg(cleared+" line saaf! Score badhta gaya 🎉")}
+  spawn()}
+ setMsg("⬅ ➡ ghumao, ⬇ tez girao, 🔄 ghumao (rotate)!");
+ setControls("");$("pControls").appendChild(tapBtn("⬅",function(){if(!hit(-1,0))cx--}));
+ $("pControls").appendChild(tapBtn("🔄",function(){var rot=cur[0].map(function(_,i){return cur.map(function(r){return r[i]}).reverse()});if(!hit(0,0,rot))cur=rot}));
+ $("pControls").appendChild(tapBtn("⬇",function(){if(!hit(0,1))cy++;else lock()}));
+ $("pControls").appendChild(tapBtn("➡",function(){if(!hit(1,0))cx++}));
+ keyHandler=function(e){if(e.key==="ArrowLeft"&&!hit(-1,0))cx--;if(e.key==="ArrowRight"&&!hit(1,0))cx++;if(e.key==="ArrowDown"){if(!hit(0,1))cy++;else lock()}if(e.key==="ArrowUp"){var rot=cur[0].map(function(_,i){return cur.map(function(r){return r[i]}).reverse()});if(!hit(0,0,rot))cur=rot}};
+ document.addEventListener("keydown",keyHandler);
+ spawn();
+ C.every(520,function(){if(dead)return;if(!hit(0,1))cy++;else lock();draw()});
+ function draw(){ctx.fillStyle="#0A0A14";ctx.fillRect(0,0,300,440);var s=300/cols;
+  grid.forEach(function(row,r){row.forEach(function(v,c){if(v){ctx.fillStyle="#2EE6FF";ctx.fillRect(c*s+1,r*s+1,s-2,s-2)}})});
+  if(cur)cur.forEach(function(row,r){row.forEach(function(v,c){if(v){ctx.fillStyle="#FFD93D";ctx.fillRect((cx+c)*s+1,(cy+r)*s+1,s-2,s-2)}})});
+ }
+ draw();
+};
+ENGINES.g2048=function(){
+ var b=[],over=false;
+ function add(){var e=[];b.forEach(function(v,i){if(!v)e.push(i)});if(e.length)b[e[Math.floor(Math.random()*e.length)]]=Math.random()<0.9?2:4}
+ function draw(){stage.innerHTML='<div class="grid2048">'+b.map(function(v){var col=v?"hsl("+(45-Math.log2(v)*14)+",95%,"+(62-Math.log2(v)*3)+"%)":"";return '<div class="cell2048" style="'+(v?"background:"+col+";color:#111":"")+'">'+(v||"")+'</div>'}).join("")+"</div>";
+  setMsg(over?"🏁 Game Over! Score: "+score:"Arrows ya neeche buttons se tiles sarakao!");setScore(b.reduce(function(a,v){return a+v},0))}
+ function move(dx,dy){if(over)return;var moved=false;
+  function line(arr){var a=arr.filter(function(v){return v});for(var i=0;i<a.length-1;i++)if(a[i]===a[i+1]){a[i]*=2;a.splice(i+1,1)}while(a.length<4)a.push(0);return a}
+  for(var k=0;k<4;k++){var idx=[],vals=[];
+   for(var t=0;t<4;t++){var r=dy? t*(dy>0?1:0)+ (dy>0?3-t:t) : k, c=dx? (dx>0?3-t:t):k; if(dy){r=(dy>0?3-t:t);c=k} if(dx){r=k;c=(dx>0?3-t:t)} idx.push(r*4+c);vals.push(b[r*4+c])}
+   var nl=line(vals);nl.forEach(function(v,i){if(b[idx[i]]!==v)moved=true;b[idx[i]]=v})}
+  if(moved){add();if(!b.includes(0)){over=true}} draw()}
+ b=new Array(16).fill(0);add();add();draw();
+ setControls("");var dp=document.createElement("div");dp.className="dpad";
+ dp.innerHTML='<span></span><button>⬆</button><span></span><button>⬅</button><button>⬇</button><button>➡</button>';
+ var bs=dp.querySelectorAll("button");bs[0].onclick=function(){move(0,-1)};bs[1].onclick=function(){move(-1,0)};bs[2].onclick=function(){move(0,1)};bs[3].onclick=function(){move(1,0)};
+ $("pControls").appendChild(dp);
+ keyHandler=function(e){var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();move(m[0],m[1])}};
+ document.addEventListener("keydown",keyHandler);
+ cleanup=function(){};
+};
+ENGINES.memory=function(){
+ var em=["🍎","🍎","🚗","🚗","🐶","🐶","⚽","⚽","🌟","🌟","🍕","🍕","🎈","🎈","🐱","🐱"];
+ em.sort(function(){return Math.random()-0.5});
+ var open=[],done=0,moves=0,lock=false;
+ stage.innerHTML='<div class="memgrid">'+em.map(function(e,i){return '<button class="memcard" data-i="'+i+'">❓</button>'}).join("")+"</div>";
+ setMsg("Do card ultao, same ho to jori ban gayi!");
+ stage.querySelectorAll(".memcard").forEach(function(btn){
+  btn.onclick=function(){if(lock||btn.classList.contains("open"))return;
+   btn.classList.add("open");btn.textContent=em[+btn.dataset.i];open.push(btn);
+   if(open.length===2){moves++;lock=true;
+    if(open[0].textContent===open[1].textContent){done++;setScore(done*10);open=[];lock=false;
+     if(done===8)setMsg("🏆 Zabardast! "+moves+" tries me saari joriyan! Score: "+score)}
+    else setTimeout(function(){open.forEach(function(b){b.classList.remove("open");b.textContent="❓"});open=[];lock=false},650)}
+  }});
+ cleanup=function(){};
+};
+ENGINES.ttt=function(){
+ var b=new Array(9).fill(""),over=false;
+ stage.innerHTML='<div class="ttt">'+b.map(function(_,i){return '<button data-i="'+i+'"></button>'}).join("")+"</div>";
+ setMsg("Tum X ho — pehle tumhari bari!");
+ var lines=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+ function win(p){return lines.some(function(l){return l.every(function(i){return b[i]===p})})}
+ function draw(){stage.querySelectorAll(".ttt button").forEach(function(btn,i){btn.textContent=b[i];btn.style.color=b[i]==="X"?"#C6FF3A":"#FF3E8A"})}
+ function comp(){var e=b.map(function(v,i){return v?"":i}).filter(function(v){return v!==""});
+  if(!e.length)return;
+  function find(p){for(var k=0;k<lines.length;k++){var l=lines[k],vals=l.map(function(i){return b[i]});if(vals.filter(function(v){return v===p}).length===2&&vals.includes(""))return l[vals.indexOf("")]}return -1}
+  var mv=find("O");if(mv<0)mv=find("X");if(mv<0)mv=e[Math.floor(Math.random()*e.length)];b[mv]="O"}
+ stage.querySelectorAll(".ttt button").forEach(function(btn){
+  btn.onclick=function(){var i=+btn.dataset.i;if(over||b[i])return;b[i]="X";draw();
+   if(win("X")){over=true;setScore(100);setMsg("🏆 Tum jeet gaye!");return}
+   if(!b.includes("")){over=true;setMsg("🤝 Barabar! Dobara try karo");return}
+   comp();draw();
+   if(win("O")){over=true;setMsg("😢 Computer jeet gaya — ↻ se badla lo!")}
+   else if(!b.includes("")){over=true;setMsg("🤝 Barabar!")}
+  }});
+ cleanup=function(){};
+};
+ENGINES.whack=function(g){
+ var zombie=g.skin==="zombie",time=30,iv=null,tv=null;
+ stage.innerHTML='<div class="memgrid" style="grid-template-columns:repeat(3,1fr)">'+Array.from({length:9},function(){return '<button class="memcard">🕳️</button>'}).join("")+"</div>";
+ setMsg((zombie?"Zombie":"Chooha")+" par tap! "+time+" second hain");
+ var cells=stage.querySelectorAll(".memcard"),cur=-1;
+ function show(){if(cur>=0){cells[cur].textContent="🕳️";cells[cur].classList.remove("open")}cur=Math.floor(Math.random()*9);cells[cur].textContent=zombie?"🧟":"🐹";cells[cur].classList.add("open")}
+ cells.forEach(function(c,i){c.onclick=function(){if(i===cur){setScore(score+ (zombie?10:5));show()}}});
+ iv=setInterval(show,750);tv=setInterval(function(){time--;if(time<=0){clearInterval(iv);clearInterval(tv);setMsg("⏰ Time khatam! Final Score: "+score)}else setMsg("⏰ "+time+"s — "+(zombie?"Zombie":"Chooha")+" maro!")},1000);
+ cleanup=function(){clearInterval(iv);clearInterval(tv)};
+ show();
+};
+ENGINES.simon=function(){
+ var cols=["#FF5252","#FFD93D","#7CFC00","#2EE6FF"],seq=[],idx=0,accept=false,round=0;
+ stage.innerHTML='<div class="simon">'+cols.map(function(c,i){return '<button data-i="'+i+'" style="background:'+c+'"></button>'}).join("")+"</div>";
+ var btns=stage.querySelectorAll(".simon button");
+ function flash(i,cb){btns[i].classList.add("lit");setTimeout(function(){btns[i].classList.remove("lit");if(cb)cb()},380)}
+ function play(){accept=false;idx=0;var k=0;setMsg("👀 Dhyaan se dekho…");
+  function next(){if(k<seq.length){flash(seq[k],function(){k++;setTimeout(next,220)})}else{accept=true;setMsg("Ab tumhari bari — waisa hi dabao!")}}setTimeout(next,500)}
+ function newRound(){round++;seq.push(Math.floor(Math.random()*4));setScore((round-1)*10);play()}
+ btns.forEach(function(b){b.onclick=function(){if(!accept)return;var i=+b.dataset.i;flash(i);
+  if(i===seq[idx]){idx++;if(idx===seq.length){accept=false;setMsg("✅ Sahi! Agla round…");setTimeout(newRound,800)}}
+  else{accept=false;setMsg("❌ Galat! Tum "+(round-1)+" round jeete. Score: "+score+" — ↻ dobara")}}});
+ setControls("");$("pControls").appendChild(tapBtn("▶ SHURU KARO",function(){seq=[];round=0;setScore(0);newRound()},"primary"));
+ setMsg("SHURU KARO dabao, rangon ka order yaad karo!");
+ cleanup=function(){};
+};
+ENGINES.pop=function(g){
+ var bubble=g.skin==="bubble",time=bubble?45:30,iv=null,tv=null;
+ stage.innerHTML='<div style="position:relative;height:400px;background:#101828;border-radius:12px;overflow:hidden" id="popArea"></div>';
+ var area=$("popArea");setMsg("🎈 "+time+" second — zyada se zyada phoro!");
+ function spawn(){if(!area.isConnected)return;var b=document.createElement("button");
+  b.textContent=bubble?"🫧":"🎈";b.style.cssText="position:absolute;border:none;background:none;font-size:"+(34+Math.random()*22)+"px;cursor:pointer;left:"+(Math.random()*82)+"%;bottom:-50px;transition:bottom "+(2.4+Math.random()*1.6)+"s linear;width:56px;height:56px";
+  b.onclick=function(){setScore(score+5);b.remove()};area.appendChild(b);
+  requestAnimationFrame(function(){b.style.bottom="105%"});
+  setTimeout(function(){b.remove()},4500)}
+ iv=setInterval(spawn,bubble?450:650);
+ tv=setInterval(function(){time--;if(time<=0){clearInterval(iv);clearInterval(tv);setMsg("⏰ Time khatam! Final Score: "+score)}},1000);
+ cleanup=function(){clearInterval(iv);clearInterval(tv)};
+ spawn();
+};
+ENGINES.mines=function(){
+ var mines={},revealed=0,over=false;
+ while(Object.keys(mines).length<10)mines[Math.floor(Math.random()*64)]=1;
+ stage.innerHTML='<div class="minegrid">'+Array.from({length:64},function(_,i){return '<button data-i="'+i+'">·</button>'}).join("")+"</div>";
+ setMsg("64 khano me 10 bomb hain — soch kar dabao!");
+ function cnt(i){var r=Math.floor(i/8),c=i%8,n=0;for(var dr=-1;dr<=1;dr++)for(var dc=-1;dc<=1;dc++){var rr=r+dr,cc=c+dc;if(rr>=0&&rr<8&&cc>=0&&cc<8&&mines[rr*8+cc])n++}return n}
+ stage.querySelectorAll(".minegrid button").forEach(function(b){
+  b.onclick=function(){var i=+b.dataset.i;if(over||b.dataset.open)return;b.dataset.open=1;
+   if(mines[i]){over=true;b.textContent="💣";b.style.background="#FF5252";setMsg("💥 Bomb phata! Score: "+score+" — ↻ dobara")}
+   else{var n=cnt(i);b.textContent=n||"✓";b.style.background="#fff";b.style.color="#111";revealed++;setScore(revealed*2);
+    if(revealed===54){over=true;setMsg("🏆 Saari safe jagah khol di! Score: "+score)}}}});
+ cleanup=function(){};
+};
+ENGINES.slide=function(){
+ var tiles=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0];
+ for(var k=0;k<120;k++){var e=tiles.indexOf(0),r=Math.floor(e/4),c=e%4,opts=[];
+  if(r>0)opts.push(e-4);if(r<3)opts.push(e+4);if(c>0)opts.push(e-1);if(c<3)opts.push(e+1);
+  var s=opts[Math.floor(Math.random()*opts.length)];tiles[e]=tiles[s];tiles[s]=0}
+ function draw(){stage.innerHTML='<div class="grid2048">'+tiles.map(function(v,i){return '<button class="cell2048" data-i="'+i+'" style="border:none;cursor:pointer;'+(v?"background:#FF9F1C;color:#111":"background:transparent")+'">'+(v||"")+'</button>'}).join("")+"</div>";
+  stage.querySelectorAll(".cell2048").forEach(function(b){b.onclick=function(){var i=+b.dataset.i,e=tiles.indexOf(0);
+   if(Math.abs(Math.floor(i/4)-Math.floor(e/4))+Math.abs(i%4-e%4)===1){tiles[e]=tiles[i];tiles[i]=0;setScore(score+1);draw();
+    if(tiles.every(function(v,j){return v===(j+1)%16}))setMsg("🏆 Puzzle hal kar liya! Moves: "+score)}}})}
+ draw();setMsg("Khali jagah ke sath wali tile dabao — 1 se 15 seedha karo!");
+ cleanup=function(){};
+};
+ENGINES.connect4=function(){
+ var b=[],over=false;for(var i=0;i<42;i++)b.push("");
+ stage.innerHTML='<div class="c4">'+b.map(function(_,i){return '<button data-i="'+i+'">⚪</button>'}).join("")+"</div>";
+ setMsg("Upar wali kisi bhi button se gola girao — tum 🔴 ho!");
+ function draw(){stage.querySelectorAll(".c4 button").forEach(function(btn,i){btn.textContent=b[i]==="R"?"🔴":b[i]==="Y"?"🟡":"⚪"})}
+ function drop(col,p){for(var r=5;r>=0;r--){if(!b[r*7+col]){b[r*7+col]=p;return r}}return -1}
+ function win(p){for(var r=0;r<6;r++)for(var c=0;c<7;c++){if(c<4&&[0,1,2,3].every(function(k){return b[r*7+c+k]===p}))return true;
+  if(r<3&&[0,1,2,3].every(function(k){return b[(r+k)*7+c]===p}))return true;
+  if(r<3&&c<4&&[0,1,2,3].every(function(k){return b[(r+k)*7+c+k]===p}))return true;
+  if(r<3&&c>2&&[0,1,2,3].every(function(k){return b[(r+k)*7+c-k]===p}))return true}return false}
+ stage.querySelectorAll(".c4 button").forEach(function(btn){
+  btn.onclick=function(){if(over)return;var col=(+btn.dataset.i)%7;
+   if(drop(col,"R")<0)return;draw();
+   if(win("R")){over=true;setScore(100);setMsg("🏆 Tum jeet gaye!");return}
+   var cols=[0,1,2,3,4,5,6].filter(function(c){return !b[c]});if(!cols.length){over=true;setMsg("🤝 Barabar!");return}
+   drop(cols[Math.floor(Math.random()*cols.length)],"Y");draw();
+   if(win("Y")){over=true;setMsg("😢 Computer jeet gaya!")}
+  }});
+ cleanup=function(){};
+};
+ENGINES.reaction=function(){
+ stage.innerHTML='<button id="rx" style="width:100%;height:300px;border:none;border-radius:14px;font-size:22px;font-weight:900;background:#FF5252;color:#fff;cursor:pointer">⏳ Ruko… Hara hone do!</button>';
+ var btn=$("rx"),state="wait",t0=0,best=null,tm=setTimeout(go,1200+Math.random()*2500);
+ function go(){state="go";t0=Date.now();btn.style.background="#7CFC00";btn.style.color="#111";btn.textContent="👆 AB TAP KARO!"}
+ btn.onclick=function(){
+  if(state==="wait"){clearTimeout(tm);btn.textContent="😅 Jaldi kar di! Dobara try — ruko…";state="wait";tm=setTimeout(go,1400+Math.random()*2200)}
+  else{var ms=Date.now()-t0;setScore(ms);if(best===null||ms<best)best=ms;
+   btn.style.background="#2EE6FF";btn.style.color="#111";btn.textContent="⚡ "+ms+" ms! "+(ms<200?"Superstar! 🚀":ms<300?"Boht tez! 🔥":"Aur practice karo!")+"\nBest: "+best+" ms — dobara ke liye tap";
+   state="wait";tm=setTimeout(function(){btn.style.background="#FF5252";btn.style.color="#fff";btn.textContent="⏳ Ruko… Hara hone do!";tm=setTimeout(go,1200+Math.random()*2500)},900)}
+ };
+ setMsg("Laal = ruko, Hara = foran tap!");
+ cleanup=function(){clearTimeout(tm)};
+};
+ENGINES.targets=function(){ENGINES.pop({skin:"target"});setMsg("🎯 Nishane tezi se aayenge — 30 second me zyada lagao!")};
+ENGINES.ludo=function(){
+ var pos=0,comp=0,turn=true,iv=null;
+ stage.innerHTML='<div style="text-align:center"><div style="font-size:64px" id="dice">🎲</div><div class="bigword" style="letter-spacing:0;font-size:20px">Tum: <span id="lp">0</span>/30 &nbsp;•&nbsp; Computer: <span id="cp">0</span>/30</div><div style="height:16px;background:#222;border-radius:99px;overflow:hidden"><div id="lbar" style="height:100%;width:0%;background:#C6FF3A"></div></div></div>';
+ setMsg("Paasa phenko — 6 aaye to extra bari! Pehle 30 par pohanchna hai.");
+ setControls("");$("pControls").appendChild(tapBtn("🎲 PAASA PHENKO",function(){
+  if(!turn)return;turn=false;var n=1+Math.floor(Math.random()*6);$("dice").textContent=["⚀","⚁","⚂","⚃","⚄","⚅"][n-1]+" "+n;
+  pos=Math.min(30,pos+n);upd();
+  if(pos>=30){setScore(100);setMsg("🏆 Tum jeet gaye!");return}
+  if(n===6){turn=true;setMsg("6 aaya! Ek aur bari 🎉");return}
+  setMsg("Computer ki bari…");
+  setTimeout(function(){var m=1+Math.floor(Math.random()*6);comp=Math.min(30,comp+m);upd();setMsg("Computer ko "+m+" aaya — ab tumhari bari!");
+   if(comp>=30){setMsg("😢 Computer jeet gaya!");return}turn=true},800);
+ },"primary"));
+ function upd(){$("lp").textContent=pos;$("cp").textContent=comp;$("lbar").style.width=(pos/30*100)+"%"}
+ cleanup=function(){};
+};
+ENGINES.cricket=function(){
+ var balls=6,runs=0,over=false,tm=null,ballT=0;
+ stage.innerHTML='<div style="text-align:center;font-size:90px" id="ck">🏏</div><div class="bigword" id="ckt" style="font-size:22px;letter-spacing:0">Ball aa rahi hai… sahi time par SWING!</div>';
+ setMsg("6 balls — ball paas aate hi SWING dabao! Der = bowled, beech me = chhakka!");
+ function bowl(){if(over)return;ballT=Date.now();$("ck").textContent="🥎"+"━".repeat(1)+"🏏";
+  tm=setTimeout(function(){if(!over){over=true;$("ckt").textContent="😱 BOWLED! Total: "+runs;setScore(runs);setMsg("Score: "+runs+" — ↻ se dobara innings")}},950)}
+ setControls("");$("pControls").appendChild(tapBtn("🏏 SWING!",function(){
+  if(over)return;clearTimeout(tm);var dt=Date.now()-ballT;balls--;
+  var got=dt<380?0:dt<620?6:dt<800?4:dt<930?1:0;runs+=got;
+  $("ckt").textContent=got===6?"🚀 CHHAKKA! +6":got===4?"🔥 CHOKA! +4":got===1?"Ek run +1":got===0&&dt<380?"😅 Boht jaldi! Miss":"Miss!";
+  setScore(runs);
+  if(balls<=0){over=true;setMsg("🏁 Innings khatam! Total Score: "+runs)}else setTimeout(bowl,900);
+ },"primary"));
+ setControls; bowl();
+ cleanup=function(){clearTimeout(tm)};
+};
+ENGINES.penalty=function(){
+ var shots=10,goals=0;
+ stage.innerHTML='<div style="text-align:center;font-size:84px">🥅</div><div class="bigword" style="font-size:19px;letter-spacing:0" id="pn">Kidhar shoot karoge?</div>';
+ setMsg("10 shots — har shot par side chuno, keeper bhi wahi guess karega!");
+ setControls("");["⬅ Left","⬆ Center","Right ➡"].forEach(function(l,i){
+  $("pControls").appendChild(tapBtn(l,function(){if(shots<=0)return;var k=Math.floor(Math.random()*3);shots--;
+   if(i!==k){goals++;setScore(goals*10);$("pn").textContent="⚽ GOAL! Keeper dusri taraf gaya! ("+goals+"/"+(10-shots)+")"}
+   else $("pn").textContent="🧤 Keeper ne pakar liya! ("+goals+"/"+(10-shots)+")";
+   if(shots===0)setMsg("🏁 Khatam! Tum ne "+goals+"/10 goals kiye — Score: "+score)},i===1?"primary":""));
+ });
+ cleanup=function(){};
+};
+ENGINES.basket=function(g){
+ var bowl=g.skin==="bowl",val=0,dir=1,iv=null,stopped=false;
+ stage.innerHTML='<div style="text-align:center;font-size:80px">'+(bowl?"🎳":"🏀")+'</div><div style="height:26px;background:#222;border-radius:99px;position:relative;overflow:hidden;margin-top:10px"><div style="position:absolute;left:42%;width:16%;height:100%;background:#7CFC00"></div><div id="bm" style="position:absolute;width:8px;height:100%;background:#FF5252;left:0%"></div></div><div class="bigword" style="font-size:17px;letter-spacing:0">Hara hissa = perfect shot!</div>';
+ setMsg("Meter ke hara hisse me roko — 10 koshishen!");
+ var tries=10;
+ iv=setInterval(function(){val+=dir*2.2;if(val>98||val<0)dir*=-1;var m=$("bm");if(m)m.style.left=val+"%"},20);
+ setControls("");$("pControls").appendChild(tapBtn(bowl?"🎳 BALL PHENKO":"🏀 SHOOT!",function(){
+  if(tries<=0)return;tries--;var ok=val>=42&&val<=58;
+  if(ok){setScore(score+(bowl?10:10));setMsg("🎉 Perfect! Score: "+score+" — Koshishen baqi: "+tries)}
+  else setMsg("😅 Miss! Hara hisse me roko — Koshishen baqi: "+tries);
+  if(tries===0)setMsg("🏁 Khatam! Final Score: "+score);
+ },"primary"));
+ cleanup=function(){clearInterval(iv)};
+};
+ENGINES.archery=function(){
+ var x=0,dir=1,iv=null,arrows=8;
+ stage.innerHTML='<div style="text-align:center"><div style="font-size:70px;display:inline-block" id="at">🎯</div><div class="bigword" style="font-size:17px;letter-spacing:0">Nishana hil raha hai — beech me aate hi chalao!</div></div>';
+ iv=setInterval(function(){x+=dir*3;if(x>120||x<-120)dir*=-1;var t=$("at");if(t)t.style.transform="translateX("+x+"px)"},24);
+ setMsg("8 teer — beech (bullseye) par zyada points!");
+ setControls("");$("pControls").appendChild(tapBtn("🏹 TEER CHALAO",function(){
+  if(arrows<=0)return;arrows--;var a=Math.abs(x);
+  var p=a<14?50:a<40?25:a<75?10:0;setScore(score+p);
+  setMsg(p===50?"🎯 BULLSEYE! +50":p?"Laga! +"+p:"😅 Chook gaye! Baqi teer: "+arrows);
+  if(arrows===0)setMsg("🏁 Khatam! Final Score: "+score)},"primary"));
+ cleanup=function(){clearInterval(iv)};
+};
+ENGINES.candy=function(){
+ var em=["🍬","🍭","🍫","🍩"],cells=[];
+ var gridArr=[];for(var i=0;i<36;i++)gridArr.push(Math.floor(Math.random()*4));
+ function draw(){stage.innerHTML='<div class="memgrid" style="grid-template-columns:repeat(6,1fr)">'+gridArr.map(function(v,i){return '<button class="memcard" data-i="'+i+'" style="font-size:26px">'+(v<0?"":em[v])+'</button>'}).join("")+"</div>";
+  stage.querySelectorAll(".memcard").forEach(function(b){b.onclick=function(){var i=+b.dataset.i,v=gridArr[i];if(v<0)return;
+   var seen={},q=[i],grp=[];while(q.length){var cur=q.pop();if(seen[cur]||gridArr[cur]!==v)continue;seen[cur]=1;grp.push(cur);
+    var r=Math.floor(cur/6),c=cur%6;if(r>0)q.push(cur-6);if(r<5)q.push(cur+6);if(c>0)q.push(cur-1);if(c<5)q.push(cur+1)}
+   if(grp.length>=2){grp.forEach(function(k){gridArr[k]=-1});setScore(score+grp.length*grp.length);setMsg(grp.length+" toffiyan phatein! +"+(grp.length*grp.length))}
+   else setMsg("Ek akeli toffee nahi phat-ti — lagi hui jori tap karo!");
+   draw()}})}
+ draw();setMsg("Ek rang ki lagi hui (connected) toffiyan tap karo!");
+ cleanup=function(){};
+};
+ENGINES.hangman=function(){
+ var words=["PAKISTAN","CRICKET","COMPUTER","MOBILE","SCHOOL","LAHORE","FOOTBALL","BICYCLE"];
+ var w=words[Math.floor(Math.random()*words.length)],guessed={},wrong=0;
+ function draw(){stage.innerHTML='<div style="text-align:center;font-size:52px">'+["😀","🙂","😐","😟","😰","😱","💀"][Math.min(6,wrong)]+'</div><div class="bigword">'+w.split("").map(function(ch){return guessed[ch]?ch:"_"}).join(" ")+'</div><div style="text-align:center;font-weight:800;color:#FF8A80">Galat: '+wrong+' / 6</div><div class="keys">'+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(function(ch){return '<button data-ch="'+ch+'" '+(guessed[ch]?"disabled":"")+'>'+ch+'</button>'}).join("")+"</div>";
+  stage.querySelectorAll(".keys button").forEach(function(b){b.onclick=function(){var ch=b.dataset.ch;guessed[ch]=1;
+   if(!w.includes(ch)){wrong++;setScore(Math.max(0,score-2))}else setScore(score+5);
+   if(w.split("").every(function(c){return guessed[c]})){draw();setMsg("🏆 Lafz bujh liya: "+w+"! Score: "+score);stage.querySelectorAll(".keys button").forEach(function(x){x.disabled=true});return}
+   if(wrong>=6){draw();setMsg("💀 Khatam! Lafz tha: "+w);stage.querySelectorAll(".keys button").forEach(function(x){x.disabled=true});return}
+   draw()}})}
+ draw();cleanup=function(){};
+};
+ENGINES.numguess=function(){
+ var n=1+Math.floor(Math.random()*100),tries=0;
+ stage.innerHTML='<input class="txtin" id="ng" type="number" min="1" max="100" placeholder="1 se 100 — number likho"><div class="bigword" style="font-size:19px;letter-spacing:0" id="ngm">Kitni koshish me bujhoge?</div>';
+ setControls("");$("pControls").appendChild(tapBtn("🔍 BUJHO",function(){
+  var v=parseInt($("ng").value,10);if(!v)return;tries++;
+  if(v===n){setScore(Math.max(10,110-tries*10));$("ngm").textContent="🎉 Sahi! "+tries+" koshish me bujh liya!";setMsg("Score: "+score+" — ↻ se naya number")}
+  else $("ngm").textContent=v<n?"⬆ Bara number socho ("+tries+" koshish)":"⬇ Chota number socho ("+tries+" koshish)"},"primary"));
+ setMsg("Computer ne 1-100 me ek number chhupaya hai!");
+ cleanup=function(){};
+};
+ENGINES.quiz=function(g){
+ var math=g.kind==="math";
+ var qs=math?null:[
+  ["Pakistan ka capital konsa hai?",["Karachi","Islamabad","Lahore","Quetta"],1],
+  ["Duniya ka sab se bara samandar?",["Atlantic","Indian","Pacific","Arctic"],2],
+  ["Pakistan kab bana?",["1945","1946","1947","1948"],2],
+  ["Ek week me kitne din hote hain?",["5","6","7","8"],2],
+  ["Pakistan ka qaumi khel?",["Cricket","Hockey","Football","Kabaddi"],1],
+  ["Suraj kis taraf se nikalta hai?",["Maghrib","Mashriq","Shumal","Junub"],1],
+  ["Pani ka chemical formula?",["CO2","O2","H2O","NaCl"],2],
+  ["Quaid-e-Azam ka asal naam?",["Muhammad Ali Jinnah","Liaquat Ali Khan","Allama Iqbal","Sir Syed"],0],
+  ["1 ghante me kitne minute?",["30","45","60","90"],2],
+  ["Duniya ka sab se lamba daria?",["Sindh","Nile","Amazon","Ganga"],1]];
+ var i=0,time=60,tv=null;
+ function next(){
+  if(math){if(time<=0)return;var a=2+Math.floor(Math.random()*18),b=2+Math.floor(Math.random()*12),op=["+","−","×"][Math.floor(Math.random()*3)];
+   var ans=op==="+"?a+b:op==="−"?a-b:a*b;
+   var opts=[ans,ans+2,ans-3];opts.sort(function(){return Math.random()-0.5});
+   show(a+" "+op+" "+b+" = ?",opts,opts.indexOf(ans));return}
+  if(i>=qs.length){setMsg("🏁 Quiz khatam! Score: "+score+" / 100");stage.innerHTML='<div class="bigword" style="font-size:24px;letter-spacing:0">Score: '+score+' / 100 🎉</div>';return}
+  show(qs[i][0],qs[i][1],qs[i][2])}
+ function show(q,opts,correct){
+  stage.innerHTML='<div style="font-weight:900;font-size:19px;text-align:center">'+q+'</div>'+opts.map(function(o,k){return '<button class="qbtn" data-k="'+k+'">'+o+'</button>'}).join("");
+  stage.querySelectorAll(".qbtn").forEach(function(b){b.onclick=function(){
+   if(+b.dataset.k===correct){setScore(score+10);b.style.background="#2E7D32";setMsg("✅ Sahi jawab! +10")}
+   else{b.style.background="#C62828";setMsg("❌ Galat! Sahi jawab: "+opts[correct])}
+   stage.querySelectorAll(".qbtn").forEach(function(x){x.disabled=true});
+   i++;setTimeout(next,850)}})}
+ if(math){setMsg("⏰ 60 second — tez jawab do!");tv=setInterval(function(){time--;if(time<=0){clearInterval(tv);stage.innerHTML='<div class="bigword" style="font-size:24px;letter-spacing:0">⏰ Time Khatam!<br>Score: '+score+'</div>';setMsg("↻ se dobara try karo")}},1000)}
+ next();cleanup=function(){if(tv)clearInterval(tv)};
+};
+ENGINES.typing=function(){
+ var words=["apple","mango","school","pakistan","cricket","mobile","garden","friend","yellow","winter","banana","market","window","doctor","family"];
+ var cur="",done=0,time=45,tv=null;
+ stage.innerHTML='<div class="bigword" id="tw" style="letter-spacing:.05em"></div><input class="txtin" id="ti" placeholder="Yahan type karo…" autocomplete="off">';
+ function newWord(){cur=words[Math.floor(Math.random()*words.length)];$("tw").textContent=cur;$("ti").value=""}
+ newWord();$("ti").focus();
+ $("ti").addEventListener("input",function(){if($("ti").value.trim().toLowerCase()===cur){done++;setScore(done*10);newWord()}});
+ tv=setInterval(function(){time--;setMsg("⏰ "+time+"s — Lafz type kiye: "+done);if(time<=0){clearInterval(tv);$("ti").disabled=true;setMsg("🏁 Khatam! "+done+" lafz — Score: "+score)}},1000);
+ setMsg("Upar wala lafz foran neeche type karo!");
+ cleanup=function(){clearInterval(tv)};
+};
+ENGINES.piano=function(){
+ var tiles=[],over=false,iv=null,spawned=0;
+ stage.innerHTML='<div class="piano" id="pn2">'+[0,1,2,3].map(function(c){return '<div data-c="'+c+'"></div>'}).join("")+"</div>";
+ setMsg("Upar se aati kaali tile tap karo — 3 miss = out!");
+ var cells=stage.querySelectorAll("#pn2 div"),miss=0,hot=-1;
+ function cycle(){if(over)return;
+  if(hot>=0){miss++;setMsg("Miss! "+miss+"/3");if(miss>=3){over=true;clearInterval(iv);setMsg("🎹 Khatam! Score: "+score);return}}
+  hot=Math.floor(Math.random()*4);cells.forEach(function(c,i){c.classList.toggle("hot",i===hot);c.textContent=i===hot?"⬛":""})}
+ cells.forEach(function(c){c.onclick=function(){if(over)return;
+  if(+c.dataset.c===hot){setScore(score+5);hot=-1;cells.forEach(function(x){x.classList.remove("hot");x.textContent=""});cycle()}
+  else{miss++;setMsg("😅 Safed par tap! Miss: "+miss+"/3");if(miss>=3){over=true;clearInterval(iv);setMsg("🎹 Khatam! Score: "+score)}}}});
+ iv=setInterval(function(){if(hot>=0)cycle()},1400);cycle();
+ cleanup=function(){clearInterval(iv)};
+};
+ENGINES.stack=function(){
+ var C=mkCanvas(400,420),ctx=C.ctx,blocks=[{x:110,w:180}],cur={x:0,w:180,dir:2.4},level=0,over=false;
+ setMsg("Block theek upar aate hi tap karo — kata hua hissa gir jayega!");
+ function place(){if(over)return;var top=blocks[blocks.length-1];
+  var left=Math.max(cur.x,top.x),right=Math.min(cur.x+cur.w,top.x+top.w),nw=right-left;
+  if(nw<=8){over=true;setMsg("🏗️ Tower gira! Height: "+level+" — Score: "+score);return}
+  blocks.push({x:left,w:nw});level++;setScore(level*10);
+  cur={x:0,w:nw,dir:2.4+level*0.22};setMsg("Height: "+level+" — aise hi lagate raho!")}
+ C.cv.addEventListener("pointerdown",place);
+ setControls("");$("pControls").appendChild(tapBtn("⬇ YAHAN RAKHO",place,"primary"));
+ keyHandler=function(e){if(e.code==="Space"){e.preventDefault();place()}};
+ document.addEventListener("keydown",keyHandler);
+ C.loop(function(){
+  ctx.fillStyle="#0A0A14";ctx.fillRect(0,0,400,420);
+  if(!over){cur.x+=cur.dir;if(cur.x<0||cur.x+cur.w>400)cur.dir*=-1}
+  var base=386;
+  blocks.forEach(function(b,i){ctx.fillStyle="hsl("+(i*24%360)+",85%,58%)";ctx.fillRect(b.x,base-i*26,b.w,24)});
+  if(!over){ctx.fillStyle="#fff";ctx.fillRect(cur.x,base-blocks.length*26,cur.w,24)}
+ });
+};
+ENGINES.maze=function(){
+ var map=["1111111111","1000000101","1011100101","1010000101","1010111101","1000100001","1110101011","1000001001","1011100001","1111111100"];
+ var px=1,py=1;
+ function draw(){stage.innerHTML='<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px">'+map.map(function(row,y){return row.split("").map(function(cell,x){
+   var ch=(x===px&&y===py)?"🐭":(x===9&&y===9)?"🧀":cell==="1"?"🧱":"";
+   return '<div style="aspect-ratio:1;background:'+(cell==="1"?"#263238":"#FFF8E1")+';border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:19px">'+ch+'</div>'}).join("")}).join("")+"</div>"}
+ draw();setMsg("Arrows/buttons se choohay ko 🧀 tak le jao!");
+ function dir(x,y){var nx=px+x,ny=py+y;if(map[ny]&&map[ny][nx]==="0"||(nx===9&&ny===9)){px=nx;py=ny;setScore(score+1);draw();
+  if(px===9&&py===9)setMsg("🏆 Rasta mil gaya! Score: "+score)}}
+ dpad(dir);
+ keyHandler=function(e){var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();dir(m[0],m[1])}};
+ document.addEventListener("keydown",keyHandler);
+ cleanup=function(){};
+};
+ENGINES.sudoku=function(){
+ var sol=[[1,2,3,4],[3,4,1,2],[2,1,4,3],[4,3,2,1]];
+ var given=[[1,0,0,4],[0,4,0,0],[0,0,4,0],[4,0,0,1]];
+ stage.innerHTML='<div class="sudoku">'+given.map(function(row,r){return row.map(function(v,c){return '<input data-r="'+r+'" data-c="'+c+'" '+(v?'value="'+v+'" class="given" readonly':"")+' maxlength="1" inputmode="numeric">'}).join("")}).join("")+"</div>";
+ setMsg("Har line aur 2x2 box me 1,2,3,4 ek ek baar!");
+ setControls("");$("pControls").appendChild(tapBtn("✅ CHECK KARO",function(){
+  var ok=true;stage.querySelectorAll(".sudoku input").forEach(function(inp){if(+inp.value!==sol[+inp.dataset.r][+inp.dataset.c])ok=false});
+  if(ok){setScore(100);setMsg("🏆 Sudoku hal kar liya!")}else setMsg("❌ Kuch number galat hain — phir dekho!")},"primary"));
+ cleanup=function(){};
+};
+ENGINES.fishing=function(){
+ var state="wait",tm=null,caught=0,time=40,tv=null;
+ stage.innerHTML='<div style="text-align:center;font-size:84px" id="fs">🎣</div><div class="bigword" style="font-size:19px;letter-spacing:0" id="fsm">Kanta pani me hai… machli ka intezar karo…</div>';
+ setMsg("🐟 aate hi foran KHEECHO dabao! 40 second hain.");
+ function wait(){state="wait";$("fs").textContent="🎣";$("fsm").textContent="Intezar karo…";
+  tm=setTimeout(function(){state="bite";$("fs").textContent="🐟";$("fsm").textContent="❗ MACHLI AAYI — ABHI KHEECHO!";
+   tm=setTimeout(function(){if(state==="bite"){$("fsm").textContent="😢 Machli bhaag gayi…";wait()}},900)},1200+Math.random()*2600)}
+ setControls("");$("pControls").appendChild(tapBtn("🪝 KHEECHO!",function(){
+  if(state!=="bite"){$("fsm").textContent="😅 Abhi machli nahi aayi thi!";return}
+  clearTimeout(tm);caught++;setScore(caught*10);$("fsm").textContent="🎉 Machli pakri! Total: "+caught;wait()},"primary"));
+ tv=setInterval(function(){time--;if(time<=0){clearInterval(tv);clearTimeout(tm);state="done";setMsg("🏁 Time khatam! "+caught+" machliyan — Score: "+score)}},1000);
+ wait();cleanup=function(){clearInterval(tv);clearTimeout(tm)};
+};
+ENGINES.colorrush=function(){
+ var cols=[["LAL","#FF5252"],["HARA","#7CFC00"],["NEELA","#2EE6FF"],["PEELA","#FFD93D"],["GULABI","#FF3E8A"]];
+ var time=30,tv=null,curInk=0;
+ function next(){var wi=Math.floor(Math.random()*5);curInk=Math.floor(Math.random()*5);
+  stage.innerHTML='<div class="bigword" style="color:'+cols[curInk][1]+'">'+cols[wi][0]+'</div><div style="text-align:center;font-weight:800;color:#B9B9D1">Lafz ka ASAL RANG batao!</div>'+cols.map(function(c,i){return '<button class="qbtn" data-i="'+i+'" style="text-align:center">'+c[0]+'</button>'}).join("");
+  stage.querySelectorAll(".qbtn").forEach(function(b){b.onclick=function(){
+   if(+b.dataset.i===curInk){setScore(score+10);setMsg("✅ Sahi!")}else setMsg("❌ Wo "+cols[curInk][0]+" tha!");
+   if(time>0)next()}})}
+ tv=setInterval(function(){time--;if(time<=0){clearInterval(tv);stage.innerHTML='<div class="bigword" style="font-size:24px;letter-spacing:0">⏰ Time Khatam!<br>Score: '+score+'</div>'}},1000);
+ next();cleanup=function(){clearInterval(tv)};
+};
+ENGINES.parking=function(){
+ var pos=0,dir=1,iv=null,round=1,parked=0;
+ stage.innerHTML='<div style="position:relative;height:150px;background:#263238;border-radius:12px;overflow:hidden"><div style="position:absolute;left:44%;top:18px;width:12%;height:70px;border:3px dashed #C6FF3A;border-radius:8px;color:#C6FF3A;text-align:center;font-weight:900;padding-top:8px">P</div><div id="pc" style="position:absolute;top:26px;font-size:52px;left:0%">🚗</div></div><div class="bigword" style="font-size:18px;letter-spacing:0">Gaari P wale box me aate hi PARK dabao!</div>';
+ iv=setInterval(function(){pos+=dir*1.6;if(pos>86||pos<0)dir*=-1;var c=$("pc");if(c)c.style.left=pos+"%"},24);
+ setMsg("5 gaariyan park karo — theek jagah = zyada points!");
+ setControls("");$("pControls").appendChild(tapBtn("🅿️ PARK KARO",function(){
+  var ok=pos>=40&&pos<=50;if(ok){parked++;setScore(score+20);setMsg("🎉 Perfect parking! ("+parked+"/5)")}
+  else setMsg("😅 Jagah se bahar! Aur koshish — ("+parked+"/5)");
+  round++;if(round>5){clearInterval(iv);setMsg("🏁 Khatam! "+parked+" gaariyan park — Score: "+score)}},"primary"));
+ cleanup=function(){clearInterval(iv)};
+};
+</script>
+</body>
+</html>
