@@ -23,13 +23,13 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Nunito",system-ui,sans-serif;overflow-x:hidden}
 button,input{font-family:inherit}
-button,[role="button"]{min-height:44px}
+button,[role="button"]{min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 /* top strip */
 .strip{background:var(--lime);color:#111;text-align:center;font-weight:900;font-size:13px;letter-spacing:.04em;padding:8px 12px}
 /* hero */
 .hero{position:relative;padding:28px 18px 10px;max-width:1180px;margin:0 auto;text-align:center}
 .hero::before{content:"";position:absolute;inset:-40px 0 auto 0;height:340px;background:radial-gradient(600px 220px at 20% 0%,rgba(255,62,138,.28),transparent 60%),radial-gradient(600px 220px at 80% 0%,rgba(46,230,255,.22),transparent 60%);pointer-events:none}
-.logo{font-family:"Fredoka",sans-serif;font-weight:700;font-size:clamp(44px,9vw,92px);line-height:.95;letter-spacing:-.02em;position:relative}
+.logo{font-family:"Fredoka",sans-serif;font-weight:700;font-size:clamp(44px,9vw,92px);line-height:.95;letter-spacing:-.02em;position:relative}.logo{display:flex;align-items:center;justify-content:center;gap:14px}.title-photo{width:64px;height:64px;object-fit:cover;object-position:center 18%;border-radius:50%;border:3px solid #FFD34D;box-shadow:0 0 14px rgba(255,211,77,.45);flex:none}
 .logo .g{color:var(--lime)} .logo .d{color:#fff} .logo .dot{color:var(--pink)}
 .tagline{font-size:clamp(16px,2.6vw,22px);font-weight:800;color:#EDEDF7;max-width:720px;margin:12px auto 4px;line-height:1.35}
 .tagline b{color:var(--yellow)}
@@ -57,20 +57,37 @@ button,[role="button"]{min-height:44px}
 .btn-play:active{transform:scale(.97)}
 .btn-lime{background:var(--lime);color:#111;padding:12px 22px;font-size:15px}
 /* grid */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
 @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr);gap:14px}}
 @media(min-width:980px){.grid{grid-template-columns:repeat(5,1fr)}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:16px 14px 14px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c,#C6FF3A)}
-.card .icon{font-size:44px;line-height:1;margin-top:4px}
-.card h3{margin:2px 0 0;font-family:"Fredoka",sans-serif;font-size:19px;line-height:1.15}
+.sec-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:28px 0 2px}
+.sec-head h2{font-family:"Fredoka",sans-serif;margin:0;font-size:clamp(23px,3.4vw,30px);line-height:1.1}
+.sec-head span{color:var(--muted);font-weight:800;font-size:13.5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:0 0 14px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.thumb{position:relative;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;background:linear-gradient(135deg,color-mix(in srgb,var(--c,#C6FF3A) 88%,#fff 12%),color-mix(in srgb,var(--c,#C6FF3A) 52%,#000 48%))}
+.thumb::before{content:"";position:absolute;inset:0;background:radial-gradient(130px 80px at 16% 8%,rgba(255,255,255,.38),transparent 60%),radial-gradient(110px 110px at 90% 96%,rgba(0,0,0,.30),transparent 62%)}
+.thumb::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1.6px,transparent 1.8px);background-size:18px 18px;opacity:.32}
+.thumb .big{font-size:66px;line-height:1;position:relative;z-index:1;transform:rotate(-4deg);filter:drop-shadow(0 9px 14px rgba(0,0,0,.45))}
+.thumb .mini{position:absolute;top:10px;right:12px;font-size:21px;opacity:.9;z-index:1;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
+.thumb .catlab{position:absolute;left:10px;bottom:10px;z-index:2;background:rgba(0,0,0,.5);color:#fff;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.thumb .go{position:absolute;right:10px;bottom:10px;z-index:2;width:42px;height:42px;border-radius:50%;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:16px;padding-left:3px;box-shadow:0 5px 12px rgba(0,0,0,.4)}
+.badge{position:absolute;top:10px;left:10px;z-index:2;font-size:11px;font-weight:900;letter-spacing:.05em;padding:6px 11px;border-radius:999px;color:#111;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.badge.pop{background:var(--yellow)}
+.badge.new{background:var(--cyan)}
+.card .cbody{padding:12px 14px 0;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{margin:0;font-family:"Fredoka",sans-serif;font-size:19px;line-height:1.15}
 .card .urdu{color:var(--yellow);font-weight:900;font-size:13px}
 .card p{margin:0;color:var(--muted);font-size:13.5px;font-weight:700;line-height:1.45;flex:1}
-.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.tag{font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;background:var(--panel2);border:1px solid var(--line);padding:5px 9px;border-radius:999px;color:#D9D9EC}
-.play{border:none;background:var(--c,#C6FF3A);color:#111;font-weight:900;border-radius:999px;padding:10px 18px;font-size:14px;cursor:pointer}
-.play:active{transform:scale(.96)}
-.empty{display:none;text-align:center;padding:40px 10px;color:var(--muted);font-weight:800;font-size:17px}
+.play{border:none;width:100%;margin-top:10px;background:var(--c,#C6FF3A);color:#111;font-weight:900;border-radius:14px;padding:14px 18px;font-size:16.5px;min-height:52px;cursor:pointer;letter-spacing:.01em;box-shadow:0 4px 0 rgba(0,0,0,.28)}
+.play:active{transform:scale(.97);box-shadow:0 1px 0 rgba(0,0,0,.28)}
+.empty{display:none;background:var(--panel);border:2px dashed var(--line);border-radius:20px;text-align:center;padding:38px 18px 30px;margin-top:18px}
+.empty .eicon{font-size:54px;line-height:1}
+.empty h3{font-family:"Fredoka",sans-serif;font-size:25px;margin:10px 0 6px;color:#fff}
+.empty p{color:var(--muted);font-weight:700;font-size:15px;line-height:1.55;margin:0 auto 16px;max-width:440px}
+.empty p b{color:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+.chip{border:2px solid var(--line);background:var(--panel2);color:#fff;border-radius:999px;padding:10px 16px;font-weight:900;font-size:14px;cursor:pointer;min-height:46px}
+.chip:active{transform:scale(.96)}
 .how{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:22px}
 .how h2{font-family:"Fredoka",sans-serif;margin:0 0 8px;font-size:24px}
 .how ol{margin:0;padding-left:20px;color:#E6E6F2;font-weight:700;line-height:1.7}
@@ -85,8 +102,6 @@ button,[role="button"]{min-height:44px}
 .content p{margin:0 0 10px}
 .content ul{margin:0 0 10px;padding-left:20px}
 .content a{color:var(--cyan);font-weight:800}
-.logo{display:flex;align-items:center;justify-content:center;gap:14px}
-.title-photo{width:64px;height:64px;object-fit:cover;object-position:center 18%;border-radius:50%;border:3px solid #FFD34D;box-shadow:0 0 14px rgba(255,211,77,.45);flex:none}
 .faqitem{border-top:1px solid var(--line);padding:12px 0}
 .faqitem:first-of-type{border-top:none}
 .faqitem b{color:#fff;font-size:16px}
@@ -101,17 +116,17 @@ footer b{color:#fff}
 .p-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
 .p-head h2{font-family:"Fredoka",sans-serif;margin:0;font-size:20px;flex:1;line-height:1.2}
 .p-head .score{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:900;font-size:14px;white-space:nowrap}
-.iconbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:20px;cursor:pointer;flex:none}
-.p-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:14px;overflow:auto;width:100%}
+.iconbtn{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:20px;cursor:pointer;flex:none}
+.p-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:14px 14px calc(16px + env(safe-area-inset-bottom));overflow:auto;width:100%}
 .p-desc{color:var(--muted);font-weight:700;text-align:center;max-width:520px;margin:0 0 12px;font-size:14.5px;line-height:1.5}
 .stage{width:100%;max-width:440px;background:#10101C;border:1px solid var(--line);border-radius:18px;padding:12px}
 canvas.game{width:100%;height:auto;display:block;background:#0A0A14;border-radius:12px;touch-action:none}
 .msg{text-align:center;font-weight:900;font-size:17px;min-height:26px;margin:10px 0 4px}
 .p-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-.p-controls button{background:var(--panel2);color:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-weight:900;font-size:15px;cursor:pointer;min-width:56px}
+.p-controls button{background:var(--panel2);color:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 20px;font-weight:900;font-size:15.5px;cursor:pointer;min-width:60px;min-height:52px}
 .p-controls button.primary{background:var(--lime);color:#111;border-color:var(--lime)}
-.dpad{display:grid;grid-template-columns:56px 56px 56px;gap:6px;justify-content:center;margin-top:10px}
-.dpad button{height:52px;font-size:20px}
+.dpad{display:grid;grid-template-columns:62px 62px 62px;gap:8px;justify-content:center;margin-top:12px}
+.dpad button{height:60px;font-size:22px;border-radius:14px}
 /* DOM games */
 .memgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .memcard{aspect-ratio:1;border-radius:12px;border:none;font-size:30px;cursor:pointer;background:var(--panel2);color:#fff}
@@ -139,7 +154,7 @@ input.txtin{width:100%;padding:14px;border-radius:12px;border:1px solid var(--li
 .piano{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .piano div{height:110px;border-radius:12px;background:var(--panel2);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:22px}
 .piano div.hot{background:var(--pink)}
-@media(max-width:520px){.featured{padding:18px}.card h3{font-size:17px}}
+@media(max-width:520px){.featured{padding:18px}.card h3{font-size:17px}.thumb .big{font-size:54px}.thumb .go{width:38px;height:38px}.play{font-size:15.5px;padding:13px 12px}.p-head{padding:10px}.p-head h2{font-size:17px}.p-head .score{padding:7px 11px;font-size:13px}.stage{padding:9px}.p-controls button{flex:1 1 42%}.sec-head{margin-top:22px}}
 </style>
 </head>
 <body>
@@ -173,7 +188,7 @@ input.txtin{width:100%;padding:14px;border-radius:12px;border:1px solid var(--li
 </div>
 
 <main class="wrap">
-  <section class="featured">
+  <section class="featured" id="featuredSec">
     <div class="big">🚌</div>
     <div style="flex:1;min-width:220px">
       <h2>Jutt Express Bus Driver</h2>
@@ -183,8 +198,32 @@ input.txtin{width:100%;padding:14px;border-radius:12px;border:1px solid var(--li
   </section>
 
   <div id="games"></div>
+
+  <section id="popSec">
+    <div class="sec-head"><h2>🔥 Popular Games</h2><span>Sab se zyada kheli jane wali games</span></div>
+    <div class="grid" id="popGrid"></div>
+  </section>
+
+  <section id="newSec">
+    <div class="sec-head"><h2>🆕 New Games</h2><span>Haal hi me add hui nayi games — pehle tum khelo!</span></div>
+    <div class="grid" id="newGrid"></div>
+  </section>
+
+  <div class="sec-head" id="allHead"><h2>🎮 Saari Games</h2><span>50 games — jo pasand aaye, Play dabao</span></div>
   <div class="grid" id="grid"></div>
-  <div class="empty" id="empty">😕 Ye game nahi mili. Koi aur naam likh kar dekho!</div>
+  <div class="empty" id="empty">
+    <div class="eicon">🔍</div>
+    <h3>Koi game nahi mili</h3>
+    <p><b id="emptyTerm"></b> ke naam se koi game nahi hai. Naam ki spelling dobara check karo — ya ye mashhoor games try karo:</p>
+    <div class="chips">
+      <button class="chip" data-q="Snake">🐍 Snake</button>
+      <button class="chip" data-q="Cricket">🏏 Cricket</button>
+      <button class="chip" data-q="2048">🔢 2048</button>
+      <button class="chip" data-q="Car">🏎️ Car Race</button>
+      <button class="chip" data-q="Ludo">🎲 Ludo</button>
+    </div>
+    <button class="btn btn-lime" id="btnClearSearch">🎮 Saari Games Dikhao</button>
+  </div>
 
   <section class="how">
     <h2>🎯 Khelna Kaise Hai?</h2>
@@ -363,21 +402,45 @@ var GAMES=[
 /* ============ PLAYER CORE ============ */
 var $=function(id){return document.getElementById(id)};
 var grid=$("grid"),catsEl=$("cats"),curCat="Sab Games";
+/* Popular aur New games ki nishaniyan */
+var POPULAR={snake:1,bus:1,g2048:1,tetris:1,cricket:1,ludo:1,car:1,flappy:1,memory:1,shooter:1};
+var NEWG={bubble:1,fishing:1,checkers:1,tetris2:1,maze:1,runner:1};
+var CATMINI={Action:"💥",Puzzle:"✨",Classic:"⭐",Sports:"🏆",Racing:"🏁",Dimag:"💡"};
+GAMES.forEach(function(g){if(POPULAR[g.id])g.pop=true;if(NEWG[g.id])g.isNew=true});
+function cardEl(g){
+ var card=document.createElement("div");card.className="card";card.style.setProperty("--c",g.c);
+ var badge=g.pop?'<span class="badge pop">🔥 POPULAR</span>':(g.isNew?'<span class="badge new">🆕 NEW</span>':"");
+ card.innerHTML='<div class="thumb" data-play="'+g.id+'" role="button" aria-label="'+g.t+' — Play dabao">'+badge
+  +'<span class="mini">'+(CATMINI[g.cat]||"⭐")+'</span><span class="big">'+g.icon+'</span>'
+  +'<span class="catlab">'+g.cat+'</span><span class="go">▶</span></div>'
+  +'<div class="cbody"><h3>'+g.t+'</h3><div class="urdu">'+g.u+'</div><p>'+g.d+'</p>'
+  +'<button class="play" data-play="'+g.id+'" style="background:'+g.c+'">▶ Play — Abhi Khelo</button></div>';
+ return card;
+}
+function renderSections(){
+ var pg=$("popGrid"),ng=$("newGrid");pg.innerHTML="";ng.innerHTML="";
+ GAMES.forEach(function(g){if(g.pop)pg.appendChild(cardEl(g));if(g.isNew)ng.appendChild(cardEl(g))});
+}
 CATS.forEach(function(c){var b=document.createElement("button");b.className="cat"+(c===curCat?" active":"");b.textContent=c;b.onclick=function(){curCat=c;document.querySelectorAll(".cat").forEach(function(x){x.classList.toggle("active",x.textContent===c)});render()};catsEl.appendChild(b)});
+function resetCat(){curCat="Sab Games";document.querySelectorAll(".cat").forEach(function(x){x.classList.toggle("active",x.textContent==="Sab Games")})}
 function render(){
  var q=$("search").value.trim().toLowerCase();
  var list=GAMES.filter(function(g){return (curCat==="Sab Games"||g.cat===curCat)&&(!q||g.t.toLowerCase().indexOf(q)>-1||g.u.toLowerCase().indexOf(q)>-1||g.d.toLowerCase().indexOf(q)>-1)});
  grid.innerHTML="";
- list.forEach(function(g){
-  var card=document.createElement("div");card.className="card";card.style.setProperty("--c",g.c);
-  card.innerHTML='<div class="icon">'+g.icon+'</div><h3>'+g.t+'</h3><div class="urdu">'+g.u+'</div><p>'+g.d+'</p><div class="meta"><span class="tag">'+g.cat+'</span></div>';
-  var pb=document.createElement("button");pb.className="play";pb.textContent="▶ Play";pb.setAttribute("data-play",g.id);
-  pb.style.background=g.c;card.querySelector(".meta").appendChild(pb);grid.appendChild(card);
- });
+ list.forEach(function(g){grid.appendChild(cardEl(g))});
+ var filtering=!!q||curCat!=="Sab Games";
+ $("featuredSec").style.display=filtering?"none":"";
+ $("popSec").style.display=filtering?"none":"";
+ $("newSec").style.display=filtering?"none":"";
+ $("allHead").style.display=filtering?"none":"";
  $("empty").style.display=list.length?"none":"block";
- $("countline").textContent=list.length+" games mil gayi — apni pasand chuno aur khelo!";
+ if(!list.length)$("emptyTerm").textContent=q?('"'+$("search").value.trim()+'"'):"Is category me";
+ $("countline").textContent=filtering?(list.length+" games mil gayi — apni pasand chuno aur khelo!"):("50 games hazir hain — upar Popular aur New games bhi zaroor dekho!");
 }
-$("search").addEventListener("input",render);render();
+$("search").addEventListener("input",render);
+document.querySelectorAll(".chip").forEach(function(ch){ch.addEventListener("click",function(){$("search").value=ch.getAttribute("data-q");resetCat();render()})});
+$("btnClearSearch").addEventListener("click",function(){$("search").value="";resetCat();render()});
+renderSections();render();
 document.addEventListener("click",function(ev){var b=ev.target.closest("[data-play]");if(b)openGame(b.getAttribute("data-play"))});
 
 var overlay=$("overlay"),stage=$("stage"),score=0,cleanup=null,curGame=null,keyHandler=null;
